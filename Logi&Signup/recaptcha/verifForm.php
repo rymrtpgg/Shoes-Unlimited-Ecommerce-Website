@@ -10,6 +10,7 @@
 
 		if($data->success==true){
 			// header('Location: www.facebook.com');
+			// Dito sa part na ito ilalagay yung header kung saan yung next page na pupuntahan nito
 			echo "Success";
 		}else{
 			echo "Please Fill Recaptcha";
