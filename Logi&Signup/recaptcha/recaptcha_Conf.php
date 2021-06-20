@@ -67,6 +67,4 @@
 
 	}else{ echo "Recaptcha Error";} //End of response from the recaptcha
 
-
-
 ?>
