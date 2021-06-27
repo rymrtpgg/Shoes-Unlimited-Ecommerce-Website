@@ -59,12 +59,12 @@
 				</div>
 	</section>
 
-	<script type="text/javascript">
+<script type="text/javascript">
 
-		function toggle(){
-			var container = document.querySelector('.container');
-			container.classList.toggle('active');
-		}
+	function toggle(){
+		var container = document.querySelector('.container');
+		container.classList.toggle('active');
+	}
 
 </script>
 <style>.error {color: red;}</style>
