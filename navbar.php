@@ -20,7 +20,7 @@ body {
 }
         17: 39;
    .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);+
   max-width: 400px;
        max-height: 900px;
   margin: auto;
@@ -92,8 +92,8 @@ body {
       </div>
     </form>
       <ul class="nav navbar-nav navbar-right">
-     <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
-      <li><a href="wishlist.php"><span class="glyphicon glyphicon-heart-empty"></span> Wish list</a></li>
+     <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart (0)</a></li>
+      <li><a href="wishlist.php"><span class="glyphicon glyphicon-heart-empty"></span> Wish list (0)</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#"></a></li>

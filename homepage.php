@@ -77,7 +77,7 @@ body {
 <div class="container contBx">
     <div class="col">
       <div class="col-sm-4 cardBx">
-        <form method="POST" action="cartManagement/cartMan.php">
+        <form method="POST" action="cartMan.php">
           <div class="card">
             <img src="product_img/product1.png" alt="nike" width="100%" height="330" name="image">
               <p><h1 value ="React-Infinity-Run">React-Infinity-Run</h1></p>
