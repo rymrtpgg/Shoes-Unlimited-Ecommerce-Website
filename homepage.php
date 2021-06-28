@@ -60,53 +60,7 @@ body {
 <body>
 
 <!----------------------- Navbar Container Start  --------------------------->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">SHOES UNLIMITED</a>
-    </div>
-    <ul class="nav navbar-nav">
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Brands<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#">Addidas</a></li>
-          <li><a href="#">Fila</a></li>
-        <li><a href="#">Nike</a></li>
-        <li><a href="#">World Balance</a></li>
-        </ul>
-      </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Kids<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#">Boy's Shoes</a></li>
-          <li><a href="#">Girl's Shoes</a></li>
-        </ul>
-        <li><a href="#">Men</a></li>
-        <li><a href="#">Women</a></li>
-      
-    </ul>
-    <form class="navbar-form navbar-right" action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-      <ul class="nav navbar-nav navbar-right">
-     <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-heart-empty"></span> Wish list</a></li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#"></a></li>
-          <li><a href="#">Account Setting</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
-    </ul>
-  </div>
-</nav>
+<?php include "navbar.php"; ?>
 <!----------------------- Navbar Container End  --------------------------->
     
     
