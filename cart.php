@@ -21,87 +21,84 @@
   <h1 style="color:wheat;">SHOES UNLIMITED</h1>
   <p style="color:wheat;">Step By Step</p> 
 </div>
+
+<!-- ------------------ SCHOES CART START --------------------- -->
     <div class="wrapper">
         <div class="wrapper_content">
+
             <div class="header_title">
                 <div class="title">
                     MY SHOPPING CART :
                 </div>
                 <div class="amount">
-                    <b>( 2 ) ITEMS</b> 
+                    <b>ITEMS ( 1 ) </b> 
                 </div>
             </div>
-            <div class="product_wrap">
-                <div class="product_info">
-                    <div class="product_img">
-                        <img src="img/nike1.jpg" alt="ProductImage" width="200px" height="200px">
-                    </div>
-                    <div class="product_data">
-                        <div class="description">
-                            <div class="main_header">
-                                Nike Fly.By Mid
-                            </div>
-                            <div class="sub_header">
-                                Graphic tri-toned mid-high basketball shoes, Rubber outsole with wavy traction pattern
-                            </div>
-                        </div>
-                        <div class="qty">
-                            <div class="size_select">
-                                <p>Size : <span>9</span></p>
-                            </div>
-                            <div class="qty_select">
-                                <p>Qty : <span>1</span></p>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div class="current_price">₱4,405.50</div>
-                            <div class="normal_price">₱4,895.00</div>
-                            <div class="discount">10% OFF</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="product_btns">
-                    <div class="remove">REMOVE</div>
-                    <div class="whishlist">MOVE TO WHISHLIST</div>
-                </div>
+
+
+            <!-- PRODUCT START -->
+
+
+
+         
+
+            $price = 100;
+
             
-            </div>
-            <div class="product_wrap">
-                <div class="product_info">
-                    <div class="product_img">
-                        <img src="img/nike2.jpg" alt="ProductImage" width="200px" height="200px">
-                    </div>
-                    <div class="product_data">
-                        <div class="description">
-                            <div class="main_header">
-                                Nike Air Force 1 '07 Lv8
-                            </div>
-                            <div class="sub_header">
-                                Best for lifestyle, Recycled Canvas upper, Textile inner
-                            </div>
-                        </div>
-                        <div class="qty">
-                            <div class="size_select">
-                                <p>Size : <span>9</span></p>
-                            </div>
-                            <div class="qty_select">
-                                <p>Qty : <span>1</span></p>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <div class="current_price">₱4,160.75</div>
-                            <div class="normal_price">₱4,895.00</div>
-                            <div class="discount">15% OFF</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="product_btns">
-                    <div class="remove">REMOVE</div>
-                    <div class="whishlist">MOVE TO WHISHLIST</div>
-                </div>
+          <?php 
+
+ 
+
+            echo "<div class='product_wrap'> ";
+            echo "<div class='product_info'>";
+            echo "<div class='product_img'>" ;
+            echo "<img src='img/nike1.jpg' alt='ProductImage' width='200px' height='200px'>";
+            echo "</div>";
+                     
+            echo "<div class='product_data'>";
+            echo "<div class='description'>";
+            echo "<div class='main_header'>";
+            echo "Nike Fly.By Mid";
+            echo "</div>";
+            echo "<div class='sub_header'>";
+            echo "Graphic tri-toned mid-high basketball shoes, Rubber outsole with wavy traction pattern";
+            echo "</div>";
+                         
+            echo "</div>";
+            echo "<div class='qty'>";
+            echo "<div class='size_select'>";
+            echo "<p>Size : <span>9</span></p>";
+            echo "</div>";
+            echo "<div class='qty_select'>";
+            echo "<p>Qty : <span>1</span></p>";
+            echo "</div>";
+            echo "</div>";
+                        
+            echo "<div class='price'>";
+            echo "<div class='current_price'>₱  </div>";
+            echo "<div class='normal_price'>₱ </div>";
+            echo "<div class='discount'>10% OFF</div>";
+            echo "</div>";
+                
+            echo "</div>";
+            echo "</div>";
             
-            </div>
-            <div class="slider">
+            echo "<div class='product_btns'>";
+            echo "<div class='remove'>REMOVE</div>";
+            echo "<div class='whishlist'>MOVE TO WHISHLIST</div>";
+            echo "</div>";
+        
+            echo "</div>";
+          
+            ?>
+
+
+
+
+            <!-- PRODUCT END -->
+
+
+   <!--          <div class="slider">
                 <div class="bg_shadow"></div>
                 <div class="select_size">
                     <div class="header">
@@ -144,8 +141,15 @@
                         <div class="button">DONE</div>
                     </div>
                 </div>
-            </div>
-        </div>        
+            </div> -->
+
+
+        </div>
+
+<!-- ------------------ SCHOES CART END --------------------- -->
+
+
+<!-- ------------------ SCHOES PRICE DETAILS START --------------------- -->
         <div class="wrapper_amount">
             <div class="header_title">
                 <div class="title">
@@ -184,5 +188,8 @@
             </div>
         </div>
     </div>
+<!-- ------------------ SCHOES PRICE DETAILS END --------------------- -->
+
+
 </body>
 </html>
