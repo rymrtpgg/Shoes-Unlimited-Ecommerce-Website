@@ -1,16 +1,16 @@
-<?php session_start();
-
+<?php
 	
+	include "functions.php";
 
 	if(isset($_POST['cartBtn'])){
-			
-		$img = $_POST['image'];
+
+		$id = $_POST['id'];
+		$image = $_POST['image'];
 		$name = $_POST['prodName'];
 		$price = $_POST['price'];
 		$color = $_POST['color'];
 
-		echo $img . $name . $price . $color;
-
+		create($id, $image, $name, $price, $color);
 
 	}elseif(isset($_POST['wishBtn'])){
 		echo "Wishl";

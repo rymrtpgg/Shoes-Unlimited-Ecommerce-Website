@@ -1,3 +1,4 @@
+<?php include "count.php";?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,7 +93,7 @@ body {
       </div>
     </form>
       <ul class="nav navbar-nav navbar-right">
-     <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart (0)</a></li>
+     <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart (<?php cartCount(); ?>)</a></li>
       <li><a href="wishlist.php"><span class="glyphicon glyphicon-heart-empty"></span> Wish list (0)</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
         <ul class="dropdown-menu">

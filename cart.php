@@ -32,27 +32,11 @@
     <div class="wrapper">
         <div class="wrapper_content">
 
-            
-          <div class="header_title">
-          <div class="title">MY SHOPPING CART :</div>
-          <div class="amount">
-          <b>ITEMS ( 1 ) </b> 
-          </div>
-          </div>
-
-
-            <!-- PRODUCT START -->
 
             
 <?php 
-  include "class/class.php";
-
-  $display = new HOMEPAGE();
-  for($x = 0; $x<=10; $x++){
-    $display->cardDisplay();    
-  }
-
-
+  include "cartFunctions.php";
+    cardDisplay();
 
 ?>
 
