@@ -76,20 +76,19 @@ body {
 
 <div class="container contBx">
     <div class="col">
-      <div class="col-sm-4 cardBx">
-        <form method="POST" action="cartMan.php">
-          <div class="card">
-            <img src="product_img/product1.png" alt="nike" width="100%" height="330" name="image">
-              <p><h1 value ="React-Infinity-Run">React-Infinity-Run</h1></p>
-              <p> ₱3,000 </p>
-              <p>Color: Cloud White / Core Black / Cloud Whit</p>
-              <p><button type="submit" class="cartBtn" id="cartBtn" name="cartBtn">Add to Cart</button></p>
-              <p><button type="submit" class="wishBtn" id="wishBtn" name="wishBtn">Add to WishList</button></p>
-              <input type="hidden" name="itemName" value="React-Infinity-Run">
-              <input type="hidden"class="itemPrice" name="itemPrice" value="3000">
-          </div>
-        </form>
-      </div>
+
+      <!-- product start -->
+
+    <?php 
+    include "functions.php";
+    read();
+
+
+
+    ?>
+      <!-- product end -->
+
+
   </div>
 </div>
 <!----------------------- Main Container End  --------------------------->

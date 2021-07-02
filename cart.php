@@ -10,6 +10,12 @@
   <title>Shoes Unlimited | Shopping Cart</title>
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   <link rel="stylesheet" href="style/cart.css">
+  <style type="text/css">
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
@@ -26,71 +32,29 @@
     <div class="wrapper">
         <div class="wrapper_content">
 
-            <div class="header_title">
-                <div class="title">
-                    MY SHOPPING CART :
-                </div>
-                <div class="amount">
-                    <b>ITEMS ( 1 ) </b> 
-                </div>
-            </div>
+            
+          <div class="header_title">
+          <div class="title">MY SHOPPING CART :</div>
+          <div class="amount">
+          <b>ITEMS ( 1 ) </b> 
+          </div>
+          </div>
 
 
             <!-- PRODUCT START -->
 
-
-
-         
-
-            $price = 100;
-
             
-          <?php 
+<?php 
+  include "class/class.php";
 
- 
+  $display = new HOMEPAGE();
+  for($x = 0; $x<=10; $x++){
+    $display->cardDisplay();    
+  }
 
-            echo "<div class='product_wrap'> ";
-            echo "<div class='product_info'>";
-            echo "<div class='product_img'>" ;
-            echo "<img src='img/nike1.jpg' alt='ProductImage' width='200px' height='200px'>";
-            echo "</div>";
-                     
-            echo "<div class='product_data'>";
-            echo "<div class='description'>";
-            echo "<div class='main_header'>";
-            echo "Nike Fly.By Mid";
-            echo "</div>";
-            echo "<div class='sub_header'>";
-            echo "Graphic tri-toned mid-high basketball shoes, Rubber outsole with wavy traction pattern";
-            echo "</div>";
-                         
-            echo "</div>";
-            echo "<div class='qty'>";
-            echo "<div class='size_select'>";
-            echo "<p>Size : <span>9</span></p>";
-            echo "</div>";
-            echo "<div class='qty_select'>";
-            echo "<p>Qty : <span>1</span></p>";
-            echo "</div>";
-            echo "</div>";
-                        
-            echo "<div class='price'>";
-            echo "<div class='current_price'>₱  </div>";
-            echo "<div class='normal_price'>₱ </div>";
-            echo "<div class='discount'>10% OFF</div>";
-            echo "</div>";
-                
-            echo "</div>";
-            echo "</div>";
-            
-            echo "<div class='product_btns'>";
-            echo "<div class='remove'>REMOVE</div>";
-            echo "<div class='whishlist'>MOVE TO WHISHLIST</div>";
-            echo "</div>";
-        
-            echo "</div>";
-          
-            ?>
+
+
+?>
 
 
 
