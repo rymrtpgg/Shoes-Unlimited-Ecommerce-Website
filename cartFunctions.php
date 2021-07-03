@@ -1,5 +1,14 @@
 <?php 
 
+
+
+
+
+function xmlDocument(){
+  
+}
+
+
 function read() {
 
   $xml = new DomDocument;
@@ -39,6 +48,33 @@ function read() {
   }
 
 }
+function priceDetails(){
+          echo "<div class='wrapper_amount'>";
+          echo "<div class='header_title'>";
+          echo "<div class='title'>TOTAL PRICE DETAILS:</div></div>";
+          echo "<div class='price_details'>";
+          echo "<div class='item'>";
+          echo "<p>Bag Total :</p>";
+          echo "<p>₱9,790</p></div>";
+          echo "<div class='item'>";
+          echo "<p>Bag Discount :</p>";
+          echo "<p class='green'>-₱25.00</p></div>";
+                        
+          echo "<div class='item'>";
+          echo "<p>Order Total :</p>";
+          echo "<p>₱8,566.25</p></div>";
+          echo "<div class='item'>";
+          echo "<p>Delivery Charges :</p>";
+          echo "<p><span style='text-decoration: line-through;'></span>₱150.00 <span class='green'>FREE</span></p></div>";
+          echo "<div class='coupon'>";
+          echo "<input type='text' placeholder='Enter Voucher Code'>";
+          echo "<input type='submit' class='btns'></div>";
+          echo "<div class='total'>";
+          echo "<p>Total :</p>";
+          echo "<p>₱8,416.25</p></div></div>";
+          echo "<div class='checkout'>";
+          echo "<a href='#' role='button' class='checkout_btn'>Place Order</a></div></div>";    
+}
 
 
   function cardDisplay() {
@@ -49,6 +85,7 @@ function read() {
   $x = $xml->getElementsByTagName('shoes')->item(0);
   $all_prod = $x->getElementsByTagName('shoe');
   $tf = 0;
+  $tx = 2;
 
   $itemCount = "$all_prod->length";
 
@@ -58,6 +95,7 @@ function read() {
   echo "<b>ITEMS ( " .$itemCount. " ) </b> ";
   echo "</div>";
   echo "</div>";      
+
   foreach ($all_prod as $each_pro) {
 
     $id = $each_pro->getElementsByTagName('id')->item(0)->nodeValue;
@@ -105,9 +143,22 @@ function read() {
             echo "</div>";
         
             echo "</div>";
+            // var_dump($tf = $tf + (int)$price);
+            // echo int()$tf = $price;
+            $tf += (int)$price;
           }
+        
+        
+
+
   }
 
+
+
+function he(){
+
+
+}
 
 
 

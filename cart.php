@@ -98,43 +98,10 @@
 
 
 <!-- ------------------ SCHOES PRICE DETAILS START --------------------- -->
-        <div class="wrapper_amount">
-            <div class="header_title">
-                <div class="title">
-                    TOTAL PRICE DETAILS:
-                </div>
-            </div>
-            <div class="price_details">
-                <div class="item">
-                    <p>Bag Total :</p>
-                    <p>₱9,790</p>
-                </div>
-                <div class="item">
-                    <p>Bag Discount :</p>
-                    <p class="green">-₱25.00</p>
-                </div>
-                
-                <div class="item">
-                    <p>Order Total :</p>
-                    <p>₱8,566.25</p>
-                </div>
-                <div class="item">
-                    <p>Delivery Charges :</p>
-                    <p><span style="text-decoration: line-through;"></span>₱150.00 <span class="green">FREE</span></p>
-                </div>
-                <div class="coupon">
-                    <input type="text" placeholder="Enter Voucher Code">
-                    <input type="submit" class="btns">
-                </div>
-                <div class="total">
-                    <p>Total :</p>
-                    <p>₱8,416.25</p>
-                </div>
-            </div>
-            <div class="checkout">
-                <a href="#" role="button" class="checkout_btn">Place Order</a>
-            </div>
-        </div>
+
+<?php priceDetails();?>
+
+
     </div>
 <!-- ------------------ SCHOES PRICE DETAILS END --------------------- -->
 

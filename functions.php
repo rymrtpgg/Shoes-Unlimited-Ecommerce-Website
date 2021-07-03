@@ -32,7 +32,7 @@ function read() {
     $color = $each_pro->getElementsByTagName('color')->item(0)->nodeValue;
 
     echo "<div class='col-sm-4 cardBx'> ";
-    echo "<form method='POST' action='cartMan.php'>";
+    echo "<form class = 'form' method='POST' action='cartMan.php'>";
     echo "<div class='card'>";
     echo "<img name='image' src=' " . $image . "' alt='nike' width='100%' height='330'>";
     echo "<p><h1 name='prodName' value ='React-Infinity-Run'> ". $name . $id . " </h1></p>";
@@ -91,11 +91,12 @@ function create($id, $img, $name, $price, $color) {
         $test = $xmls->Save('cart.xml');
 
         if($test) {
-          echo "Success added";
+          // echo "Success added";
+          echo "<script>alert('Success to add item');</script>";
           // echo $id . " " .  $name . " " . $des;
         }else {
-          echo "Add failed";
-          echo $id . " " .  $img . " " . $name;
+          echo "<script>alert('Success to add item');</script>";
+          // echo $id . " " .  $img . " " . $name;
         }
       }
     }

@@ -5,28 +5,28 @@
 		<id>100</id>
 		<image>product_img/product1.png</image>
 		<shoeName>React-Infinity-Run</shoeName>
-		<price>3,000</price>
+		<price>3000</price>
 		<color>Cloud White / Core Black / Cloud Whit</color>
 	</shoe>
 		<shoe>
 		<id>200</id>	
 		<image>product_img/product1.png</image>	
 		<shoeName>React-Infinity-Run</shoeName>
-		<price>4,000</price>
+		<price>4000</price>
 		<color>Cloud White / Core Black / Cloud Whit</color>
 	</shoe>
 		<shoe>
 		<id>300</id>	
 		<image>product_img/product1.png</image>	
 		<shoeName>React-Infinity-Run</shoeName>
-		<price>3,000</price>
+		<price>3000</price>
 		<color>Cloud White / Core Black / Cloud Whit</color>
 	</shoe>
 		<shoe>
 		<id>400</id>	
 		<image>product_img/product1.png</image>	
 		<shoeName>React-Infinity-Run</shoeName>
-		<price>3,000</price>
+		<price>3000</price>
 		<color>Cloud White / Core Black / Cloud Whit</color>
 	</shoe>	
 

@@ -5,25 +5,19 @@
   <title>SHOE PROJECT</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style/homepage.css">  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <!-- <link rel="stylesheet" href="style/homepage.css"> -->
-  <link rel="stylesheet" type="text/css" href="style/homepage.css">  
 <style>
-
 body {
-    position: relative;
-  background-image: url(image/bg.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;  
-  background-size: cover;
+  background-image: url("style/img.jpg");
 }
-        17: 39;
-   .card {
+17: 39;
+.card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 400px;
-       max-height: 900px;
+  max-height: 900px;
   margin: auto;
   text-align: center;
   font-family: arial;
@@ -57,6 +51,8 @@ body {
 
 </style>
 </head>
+
+
 <body>
 
 <!----------------------- Navbar Container Start  --------------------------->
@@ -82,9 +78,6 @@ body {
     <?php 
     include "functions.php";
     read();
-
-
-
     ?>
       <!-- product end -->
 
@@ -95,22 +88,22 @@ body {
 
 
 
-<div class="container-fluid text-center">
+<!-- <div class="container-fluid text-center">
     <a href="#" class="previous">&laquo; Previous</a>
 <a href="#" class="next">Next &raquo;</a>
     </div>
      
-
+ -->
 
 <!----------------------- Footer Container Start  --------------------------->
     
-    <footer class="container-fluid text-center">
+<footer class="container-fluid text-center">
   <div class="container-fluid">
   <h3>HELP</h3>
-       <p><a href="#">About Us</a></p>
-       <p><a href="#">Contact Us</a></p>
-      <p><a href="#">Privacy Policies</a></p>
-       <p><a href="#">How Do I Check Out?</a></p>     
+    <p><a href="#">About Us</a></p>
+    <p><a href="#">Contact Us</a></p>
+    <p><a href="#">Privacy Policies</a></p>
+    <p><a href="#">How Do I Check Out?</a></p>     
 </div>
 </footer>
 
