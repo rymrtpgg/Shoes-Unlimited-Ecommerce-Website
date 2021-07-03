@@ -14,8 +14,12 @@
 
 	}elseif(isset($_POST['wishBtn'])){
 		echo "Wishl";
+	}elseif($_POST['cartRemove']){
+		echo "Cart Remove";
 	}else{
-		echo "No";
+		echo "<script>alert('No')</script>";
+		header("Location: homepage.php");
+		exit();
 	}
 
 

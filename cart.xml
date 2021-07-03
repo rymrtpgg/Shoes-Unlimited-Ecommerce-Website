@@ -21,4 +21,11 @@
     <price>3000</price>
     <color>Cloud White / Core Black / Cloud Whit</color>
   </shoe>
+  <shoe>
+    <id>300</id>
+    <image>product_img/product1.png</image>
+    <shoeName>React-Infinity-Run</shoeName>
+    <price>3000</price>
+    <color>Cloud White / Core Black / Cloud Whit</color>
+  </shoe>
 </shoes>

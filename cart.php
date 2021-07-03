@@ -4,12 +4,16 @@
 <head>  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
   <title>Shoes Unlimited | Shopping Cart</title>
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  
   <link rel="stylesheet" href="style/cart.css">
+  
   <style type="text/css">
     a {
       text-decoration: none;
@@ -29,14 +33,15 @@
 </div>
 
 <!-- ------------------ SCHOES CART START --------------------- -->
-    <div class="wrapper">
-        <div class="wrapper_content">
+<div class="wrapper">
+  <div class="wrapper_content">
 
 
             
 <?php 
   include "cartFunctions.php";
-    cardDisplay();
+  $cartCrud = new cartCrud();
+  $cartCrud->cardDisplay();
 
 ?>
 
@@ -92,17 +97,16 @@
             </div> -->
 
 
-        </div>
+  </div>
 
 <!-- ------------------ SCHOES CART END --------------------- -->
 
 
 <!-- ------------------ SCHOES PRICE DETAILS START --------------------- -->
 
-<?php priceDetails();?>
+<?php $cartCrud->priceDetails();?>
 
-
-    </div>
+</div>
 <!-- ------------------ SCHOES PRICE DETAILS END --------------------- -->
 
 
