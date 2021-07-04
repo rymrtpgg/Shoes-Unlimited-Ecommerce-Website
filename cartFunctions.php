@@ -1,49 +1,61 @@
+<!-- Crud -->
+
 <?php 
 
-function read() {
 
-  $xml = new DomDocument;
-  $xml->load('product.xml');
-  $x = $xml->getElementsByTagName('shoes')->item(0);
-  $all_prod = $x->getElementsByTagName('shoe');
+//Crud class Start
+class cartCrud { 
+
+// -----Create function start
+function create($id, $img, $name, $price, $color) {
+
+  $xmlfile = 'cart.xml'; 
+  $xmls = new DomDocument;
+  $xmls->formatOutput = true;
+  $xmls->preserveWhiteSpace = false;
+  $xmls->load($xmlfile);
+  $products = $xmls->getElementsByTagName('shoes');
+  $product = $xmls->getElementsByTagName('shoe');
   $tf = 0;
 
-  echo "<h2>Products $all_prod->length </h2>";
-      
-  foreach ($all_prod as $each_pro) {
 
-  $id = $each_pro->getElementsByTagName('id')->item(0)->nodeValue;
-  $image = $each_pro->getElementsByTagName('image')->item(0)->nodeValue;
-  $name  = $each_pro->getElementsByTagName('shoeName')->item(0)->nodeValue;
-  $price = $each_pro->getElementsByTagName('price')->item(0)->nodeValue;
-  $color = $each_pro->getElementsByTagName('color')->item(0)->nodeValue;
-
-  echo "<div class='col-sm-4 cardBx'> ";
-  echo "<form method='POST' action='cartMan.php'>";
-  echo "<div class='card'>";
-  echo "<img name='image' src=' " . $image . "' alt='nike' width='100%' height='330'>";
-  echo "<p><h1 name='prodName' value ='React-Infinity-Run'> ". $name . $id . " </h1></p>";
-  echo "<p name='price' > " . $price . "</p>";
-  echo "<p>Color: ". $color ."</p>";
-  echo "<p><button type='submit' class='cartBtn' id='cartBtn' name='cartBtn'>Add to Cart</button></p>";
-  echo "<p><button type='submit' class='wishBtn' id='wishBtn' name='wishBtn'>Add to WishList</button></p>";
-  echo "<input type='hidden' name='id' value='".$id."'>";
-  echo "<input type='hidden' name='image' value='".$image."'>";
-  echo "<input type='hidden' name='prodName' value='".$name."'>";
-  echo "<input type='hidden' name='price' value='".$price."'>";
-  echo "<input type='hidden' name='color' value='".$color."'>";
-  echo "</div>";
-  echo "</form>";
-  echo "</div>  ";
-
+  foreach($product as $prod) {
+    if($prod->getElementsByTagName('id')->item(0)->nodeValue == $id){
+      $tf = 1;
+    }
   }
 
-}
+  if($tf != 0){
+    echo $tf;
+    echo "Add faileds";
+  }elseif($tf >= 0) {
 
-class cartCrud {
+  $newProd = $xmls->createELement('shoe');
+  $newProd->appEndChild($xmls->createElement('id',$id));
+  $newProd->appEndChild($xmls->createElement('image',$img));
+  $newProd->appEndChild($xmls->createElement('shoeName', $name));
+  $newProd->appEndChild($xmls->createElement('price', $price));
+  $newProd->appEndChild($xmls->createElement('color', $color));
+  $products->item(0)->appEndChild($newProd);
+  
+  $test = $xmls->Save('cart.xml');
 
-  function priceDetails(){
+    if($test) {
+      // echo "Success added";
+      echo "<script>alert('Success to add item');</script>";
+      exit();
+      // echo $id . " " .  $name . " " . $des;
+    }else {
+      echo "<script>alert('Success to add item');</script>";
+      exit();
+      // echo $id . " " .  $img . " " . $name;
+    }
+  }
+}// -----Create function End
 
+
+// -----Display price details function start
+function priceDetails(){
 
   $xml = new DomDocument;
   $xml->load('cart.xml');
@@ -83,9 +95,10 @@ class cartCrud {
   echo "<p>₱8,416.25</p></div></div>";
   echo "<div class='checkout'>";
   echo "<a href='#' role='button' class='checkout_btn'>Place Order</a></div></div>";    
-}
+}// -----Display price details function End
 
 
+// -----Read Function start 
 function cardDisplay(){
 
   $xml = new DomDocument;
@@ -106,12 +119,12 @@ function cardDisplay(){
 
   foreach ($all_prod as $each_pro) {
 
-    $id = $each_pro->getElementsByTagName('id')->item(0)->nodeValue;
-    $image = $each_pro->getElementsByTagName('image')->item(0)->nodeValue;
-    $name  = $each_pro->getElementsByTagName('shoeName')->item(0)->nodeValue;
+    $id     = $each_pro->getElementsByTagName('id')->item(0)->nodeValue;
+    $image  = $each_pro->getElementsByTagName('image')->item(0)->nodeValue;
+    $name   = $each_pro->getElementsByTagName('shoeName')->item(0)->nodeValue;
     $prices = $each_pro->getElementsByTagName('price')->item(0)->nodeValue;
-    $color = $each_pro->getElementsByTagName('color')->item(0)->nodeValue;
-    $price = number_format($prices, 2);
+    $color  = $each_pro->getElementsByTagName('color')->item(0)->nodeValue;
+    $price  = number_format($prices, 2);
 
     echo "<form action='cartMan.php' method='POST'>";
     echo "<div class='product_wrap'> ";
@@ -145,64 +158,60 @@ function cardDisplay(){
                 
     echo "</div>";
     echo "</div>";
-            
+    echo "<input type='hidden' name='id' value='".$id."'>";        
     echo "<div class='product_btns'>";
-    echo "<div class='remove'><button id='cartRemove' name='cartRemove' class='cartRemove'> REMOVEs </button> </div>";
+    echo "<div class='remove'><button id='cartRemove' name='cartRemove' class='cartRemove'> REMOVE </button> </div>";
     echo "<div class='whishlist'>MOVE TO WHISHLIST</div>";
-    echo "</div>";
-
-    echo "</div>";
+    echo "</div></div>";
     echo "</form>";
     
   }
-}
+}// -----Read Function End
 
 
-
+// -----Delete Function start 
 function cartRemove($cartId){
 
   $xml = new DomDocument;
   $xml->formatOutput = true;
   $xml->preserveWhiteSpace = false;     
   $xml->load('cart.xml');
-
-  $products = $xml->getElementsByTagName('products');
-  $product = $xml->getElementsByTagName('product');
-
+  $shoes = $xml->getElementsByTagName('shoes');
+  $shoe = $xml->getElementsByTagName('shoe');
   $ctr = 0;
-  foreach($product as $prod){
-  $old_Id = $prod->getElementsByTagName('id')->item(0)->nodeValue;
+  $flag = 0;
 
-  if($cartId === $old_Id) {
-    $flag = 1;
-    $oldNode = $xml->getElementsByTagName('product')->item($ctr);
+  foreach($shoe as $prod){
+
+    $old_Id = $prod->getElementsByTagName('id')->item(0)->nodeValue;
+    if($cartId === $old_Id) {
+    
+      $flag = 1;
+      $oldNode = $xml->getElementsByTagName('shoe')->item($ctr);
+    
+    }$ctr++;
   }
-  $ctr++;
-  }
+
 
   if($flag != 0 ){
 
-  $products->item(0)->removeChild($oldNode);
+  $shoes->item(0)->removeChild($oldNode);
   $test = $xml->Save('cart.xml');
 
     if($test){
-      echo "Remove: " . $cartId . "<br>"; 
-      echo "Success";
+
+      echo "<script>alert('Success to remove an item');</script>";
     }   
-
   }else {
-    echo "Remove failed<br>";
-    echo $ctr;
+
+    echo "<script>alert('Failed to remove an item');</script>";
+
+  
   }  
-}
+}// -----Delete Function End
 
 
-
-
-}
-
-
-
+} //Crud class End 
 
 
 ?>

@@ -8,11 +8,10 @@ function read() {
   $x = $xml->getElementsByTagName('shoes')->item(0);
   $all_prod = $x->getElementsByTagName('shoe');
   $tf = 0;
-
       
   foreach ($all_prod as $each_pro) {
 
-    $id = $each_pro->getElementsByTagName('id')->item(0)->nodeValue;
+    $id    = $each_pro->getElementsByTagName('id')->item(0)->nodeValue;
     $image = $each_pro->getElementsByTagName('image')->item(0)->nodeValue;
     $name  = $each_pro->getElementsByTagName('shoeName')->item(0)->nodeValue;
     $price = $each_pro->getElementsByTagName('price')->item(0)->nodeValue;
@@ -40,54 +39,5 @@ function read() {
 
 }
 
-
-function create($id, $img, $name, $price, $color) {
-
-      $xmlfile = 'cart.xml'; 
-      $xmls = new DomDocument;
-
-      $xmls->formatOutput = true;
-      $xmls->preserveWhiteSpace = false;
-
-      $xmls->load($xmlfile);
-
-      $products = $xmls->getElementsByTagName('shoes');
-      $product = $xmls->getElementsByTagName('shoe');
-      $tf = 0;
-
-
-      foreach($product as $prod) {
-        if($prod->getElementsByTagName('id')->item(0)->nodeValue == $id){
-          $tf = 1;
-        }
-      }
-
-      if($tf != 0){
-        echo $tf;
-        echo "Add faileds";
-      }elseif($tf >= 0) {
-
-        $newProd = $xmls->createELement('shoe');
-        $newProd->appendChild($xmls->createElement('id',$id));
-        $newProd->appendChild($xmls->createElement('image',$img));
-        $newProd->appendChild($xmls->createElement('shoeName', $name));
-        $newProd->appendChild($xmls->createElement('price', $price));
-        $newProd->appendChild($xmls->createElement('color', $color));
-        $products->item(0)->appendChild($newProd);
-
-        $test = $xmls->Save('cart.xml');
-
-        if($test) {
-          // echo "Success added";
-          echo "<script>alert('Success to add item');</script>";
-          exit();
-          // echo $id . " " .  $name . " " . $des;
-        }else {
-          echo "<script>alert('Success to add item');</script>";
-          exit();
-          // echo $id . " " .  $img . " " . $name;
-        }
-      }
-    }
 
 ?>

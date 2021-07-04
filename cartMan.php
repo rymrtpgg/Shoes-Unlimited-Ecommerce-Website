@@ -1,6 +1,7 @@
 <?php
 	
-	include "functions.php";
+	include "cartFunctions.php";
+	$crud = new cartCrud();
 
 	if(isset($_POST['cartBtn'])){
 
@@ -10,18 +11,19 @@
 		$price = $_POST['price'];
 		$color = $_POST['color'];
 
-		create($id, $image, $name, $price, $color);
+		$crud->create($id, $image, $name, $price, $color);
 
-	}elseif(isset($_POST['wishBtn'])){
-		echo "Wishl";
-	}elseif($_POST['cartRemove']){
-		echo "Cart Remove";
+	}elseif(isset($_POST['cartRemove'])){
+
+		$id = $_POST['id'];
+		$crud->cartRemove($id);
+		
 	}else{
+		
 		echo "<script>alert('No')</script>";
-		header("Location: homepage.php");
+		// header("Location: homepage.php");
 		exit();
 	}
-
 
 
 
