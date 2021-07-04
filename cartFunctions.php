@@ -41,14 +41,11 @@ function create($id, $img, $name, $price, $color) {
   $test = $xmls->Save('cart.xml');
 
     if($test) {
-      // echo "Success added";
       echo "<script>alert('Success to add item');</script>";
       exit();
-      // echo $id . " " .  $name . " " . $des;
     }else {
       echo "<script>alert('Success to add item');</script>";
       exit();
-      // echo $id . " " .  $img . " " . $name;
     }
   }
 }// -----Create function End
