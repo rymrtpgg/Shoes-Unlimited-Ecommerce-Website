@@ -158,7 +158,7 @@ function cardDisplay(){
     echo "<input type='hidden' name='id' value='".$id."'>";        
     echo "<div class='product_btns'>";
     echo "<div class='remove'><button id='cartRemove' name='cartRemove' class='cartRemove'> REMOVE </button> </div>";
-    echo "<div class='whishlist'>MOVE TO WHISHLIST</div>";
+    echo "<div class='moveToWishList'><button id='moveToWishList' name='moveToWishList'> MOVE TO WISHLIST </button> </div>";
     echo "</div></div>";
     echo "</form>";
     

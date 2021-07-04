@@ -20,14 +20,14 @@ class wishListCrud {
 		  $price = number_format($price_Format, 2);    
 
 	    echo "<div class='col-sm-4 cardBx'> ";
-	    echo "<form class = 'form' method='POST' action='cartMan.php'>";
+	    echo "<form class = 'form' method='POST' action='wishlistMan.php'>";
 	    echo "<div class='card'>";
 	    echo "<img name='image' src=' " . $image . "' alt='nike' width='100%' height='330'>";
 	    echo "<p><h1 name='prodName' value ='React-Infinity-Run'> ". $name . $id . " </h1></p>";
 	    echo "<p name='price' > " . $price . "</p>";
 	    echo "<p>Color: ". $color ."</p>";
-	    echo "<p><button type='submit' class='cartBtn' id='cartBtn' name='cartBtn'>Move to Cart</button></p>";
-	    echo "<p><button type='submit' class='wishBtn' id='wishBtn' name='wishBtn'>Add to WishList</button></p>";
+	    echo "<p><button type='submit' class='cartBtn' id='cartBtn' name='addCartBtn'>Move to Cart</button></p>";
+	    echo "<p><button type='submit' class='wishBtn' id='wishBtn' name='removeWishBtn'>Remove</button></p>";
 	    echo "<input type='hidden' name='id' value='".$id."'>";
 	    echo "<input type='hidden' name='image' value='".$image."'>";
 	    echo "<input type='hidden' name='prodName' value='".$name."'>";
