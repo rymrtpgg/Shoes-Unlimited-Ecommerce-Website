@@ -1,12 +1,10 @@
 <?php 
 
-	$host = "localhost";
-	$user = "root";
-	$pass = "";
-	$db = "shoesUnlimited";
+	define("DB_HOST", "localhost");
+	define("DB_USER", "root");
+	define("DB_PASS", "");
+	define("DB_NAME", "shoes_DB");
 
-	$conn = mysqli_connect($host, $user, $pass) or die("Host connectio problem");
-	mysqli_select_db($conn, $db) or die("Database connection problem");
-
+	$con = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME) or die("Connection DB problem");
 
 ?>
