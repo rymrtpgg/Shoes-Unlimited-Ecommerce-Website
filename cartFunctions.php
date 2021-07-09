@@ -6,48 +6,79 @@
 //Crud class Start
 class cartCrud { 
 
+
+
+  // public $newProd;
+  // public $products;
+
+
 // -----Create function start
-function create($id, $img, $name, $price, $color) {
+  function create($id, $img, $name, $price, $color) {
 
-  $xmlfile = 'cart.xml'; 
-  $xmls = new DomDocument;
-  $xmls->formatOutput = true;
-  $xmls->preserveWhiteSpace = false;
-  $xmls->load($xmlfile);
-  $products = $xmls->getElementsByTagName('shoes');
-  $product = $xmls->getElementsByTagName('shoe');
-  $tf = 0;
+    $xmlfile = 'cart.xml'; 
+    $xmls = new DomDocument;
+    $xmls->formatOutput = true;
+    $xmls->preserveWhiteSpace = false;
+    $xmls->load($xmlfile);
+    $products = $xmls->getElementsByTagName('shoes');
+    $product = $xmls->getElementsByTagName('shoe');
+    $tf = 0;
 
 
-  foreach($product as $prod) {
-    if($prod->getElementsByTagName('id')->item(0)->nodeValue == $id){
-      $tf = 1;
+    foreach($product as $prod) {
+      if($prod->getElementsByTagName('id')->item(0)->nodeValue == $id){
+        $tf = 1;
+      }
     }
-  }
 
-  if($tf != 0){
-    echo $tf;
-    echo "Add faileds";
-  }elseif($tf >= 0) {
+    if($tf != 0){
 
-  $newProd = $xmls->createELement('shoe');
-  $newProd->appEndChild($xmls->createElement('id',$id));
-  $newProd->appEndChild($xmls->createElement('image',$img));
-  $newProd->appEndChild($xmls->createElement('shoeName', $name));
-  $newProd->appEndChild($xmls->createElement('price', $price));
-  $newProd->appEndChild($xmls->createElement('color', $color));
-  $products->item(0)->appEndChild($newProd);
-  
-  $test = $xmls->Save('cart.xml');
+      $newProd = $xmls->createELement('shoe');
+      $newProd->appEndChild($xmls->createElement('id',$id));
+      $newProd->appEndChild($xmls->createElement('image',$img));
+      $newProd->appEndChild($xmls->createElement('shoeName', $name));
+      $newProd->appEndChild($xmls->createElement('price', $price));
+      $newProd->appEndChild($xmls->createElement('color', $color));
+      $products->item(0)->appEndChild($newProd);
+      
+      $test = $xmls->Save('cart.xml');
 
-    if($test) {
-      echo "<script>alert('Success to add item');</script>";
-      exit();
-    }else {
-      echo "<script>alert('Success to add item');</script>";
-      exit();
+      if($test) {
+        echo "<script>alert('Success to add item');</script>";
+        header("Location: homepage.php");
+        exit();
+      }else {
+        echo "<script>alert('Failed to add item');</script>";
+        header("Location: homepage.php");
+
+        exit();
+      }      
+      
+
+    }elseif($tf >= 0) {
+
+      $newProd = $xmls->createELement('shoe');
+      $newProd->appEndChild($xmls->createElement('id',$id));
+      $newProd->appEndChild($xmls->createElement('image',$img));
+      $newProd->appEndChild($xmls->createElement('shoeName', $name));
+      $newProd->appEndChild($xmls->createElement('price', $price));
+      $newProd->appEndChild($xmls->createElement('color', $color));
+      $products->item(0)->appEndChild($newProd);
+      
+      $test = $xmls->Save('cart.xml');
+
+      if($test) {
+        echo "<script>alert('Success to add item');</script>";
+        header("Location: homepage.php");
+
+        exit();
+      }else {
+        echo "<script>alert('Success to add item');</script>";
+        header("Location: homepage.php");
+        
+        exit();
+      }
     }
-  }
 }// -----Create function End
 
 
@@ -77,7 +108,7 @@ function priceDetails(){
   echo "<div class='item'>";
   echo "<p>Bag Discount :</p>";
   echo "<p class='green'>-₱25.00</p></div>";
-                          
+  
   echo "<div class='item'>";
   echo "<p>Order Total :</p>";
   echo "<p>₱8,566.25</p></div>";
@@ -129,14 +160,14 @@ function cardDisplay(){
     echo "<div class='product_img'>" ;
     echo "<img src='" . $image."' alt='ProductImage' width='200px' height='200px'>";
     echo "</div>";
-                     
+    
     echo "<div class='product_data'>";
     echo "<div class='description'>";
     echo "<div class='main_header'> " . $name ." </div>";
     echo "<div class='sub_header'>";
     echo  $color;
     echo "</div>";
-                         
+    
     echo "</div>";
     echo "<div class='qty'>";
     echo "<div class='size_select'>";
@@ -146,19 +177,21 @@ function cardDisplay(){
     echo "<p>Qty : <span>1</span></p>";
     echo "</div>";
     echo "</div>";
-                        
+    
     echo "<div class='price'>";
     echo "<div class='current_price'>₱" . $price . "  </div>";
     echo "<div class='normal_price'>₱" . $price  . " </div>";
     echo "<div class='discount'>10% OFF</div>";
     echo "</div>";
-                
+    
     echo "</div>";
     echo "</div>";
     echo "<input type='hidden' name='id' value='".$id."'>";        
     echo "<div class='product_btns'>";
-    echo "<div class='remove'><button id='cartRemove' name='cartRemove' class='cartRemove'> REMOVE </button> </div>";
-    echo "<div class='moveToWishList'><button id='moveToWishList' name='moveToWishList'> MOVE TO WISHLIST </button> </div>";
+    // echo "<div class='remove'><button id='cartRemove' name='cartRemove' class='cartRemove'> REMOVE </button> </div>";
+    
+    echo "<div class='cartRemove'><button class='cartRemove' id='cartRemove' name='cartRemove'> REMOVE </button> </div>";   
+    echo "<div class='moveToWishList'><button class='moveToWishList' id='moveToWishList' name='moveToWishList'> MOVE TO WISHLIST </button> </div>";
     echo "</div></div>";
     echo "</form>";
     
@@ -182,28 +215,30 @@ function cartRemove($cartId){
 
     $old_Id = $prod->getElementsByTagName('id')->item(0)->nodeValue;
     if($cartId === $old_Id) {
-    
+      
       $flag = 1;
       $oldNode = $xml->getElementsByTagName('shoe')->item($ctr);
-    
+      
     }$ctr++;
   }
 
 
   if($flag != 0 ){
 
-  $shoes->item(0)->removeChild($oldNode);
-  $test = $xml->Save('cart.xml');
+    $shoes->item(0)->removeChild($oldNode);
+    $test = $xml->Save('cart.xml');
 
     if($test){
 
       echo "<script>alert('Success to remove an item');</script>";
+      header("Location: cart.php");
     }   
   }else {
 
     echo "<script>alert('Failed to remove an item');</script>";
+    header("Location: cart.php");
 
-  
+    
   }  
 }// -----Delete Function End
 

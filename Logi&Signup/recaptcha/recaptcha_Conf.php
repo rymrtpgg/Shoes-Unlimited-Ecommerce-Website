@@ -1,7 +1,5 @@
 <?php include "../../db/connection.php";
 
-
-	 //Start of response from the recaptcha
 	if(isset($_POST['g-recaptcha-response'])){	
 
 		$secretKey = "6LfOaMwaAAAAANLkxu4mqeRWJmWID5MTLLv6b0zE";
@@ -25,10 +23,17 @@
 				$password2 = sha1($_POST['conf_passup']);
 				// End of Hashing the password for secure purposes					
 
-					$sql = "INSERT INTO signupAccount (username, email, password) VALUES ('$username', '$email','$password1')";
-					$insertQUery = mysqli_query($conn, $sql);
+					$sql = "INSERT INTO users(username, email, password) VALUES ('$username', '$email','$password1')";
+					
+					$insertQUery = mysqli_query($con, $sql);
 					if(!$insertQUery) {
 						echo "Qery problem";
+						echo $username;
+						echo $password1;
+						echo "<pre>";
+						echo print_r($con);
+						echo "<pre>";
+
 					} else {
 						echo "success";
 					}
@@ -38,8 +43,8 @@
 				$uname = $_POST['userName'];
 				$pass = sha1($_POST['password']);
 
-				$sql = "SELECT * FROM signupAccount WHERE username='$uname' AND password='$pass' ";
-				$result = mysqli_query($conn, $sql);
+				$sql = "SELECT * FROM users WHERE username='$uname' AND password='$pass' ";
+				$result = mysqli_query($con, $sql);
 				$row = mysqli_fetch_assoc($result);
 
 				if(mysqli_num_rows($result)==1) {
@@ -51,10 +56,11 @@
 					}else {
 						if($row['username'] === $uname && $row['password'] === $pass) {
 							echo "username and passwor is exist";
+							header("Location: ../../homepage.php");
 						}
 					}
 				}else {
-					echo " none";
+					header("Location: ../../index.php");
 					exit();
 				}
 			}

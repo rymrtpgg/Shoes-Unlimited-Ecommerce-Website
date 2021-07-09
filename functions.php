@@ -1,21 +1,31 @@
 <?php 
 
+class Cru {
 
-function read() {
 
-  $xml = new DomDocument;
-  $xml->load('product.xml');
-  $x = $xml->getElementsByTagName('shoes')->item(0);
-  $all_prod = $x->getElementsByTagName('shoe');
-  $tf = 0;
-      
-  foreach ($all_prod as $each_pro) {
+public $homepage_product;
+public $cart_product;
 
-    $id    = $each_pro->getElementsByTagName('id')->item(0)->nodeValue;
-    $image = $each_pro->getElementsByTagName('image')->item(0)->nodeValue;
-    $name  = $each_pro->getElementsByTagName('shoeName')->item(0)->nodeValue;
-    $price = $each_pro->getElementsByTagName('price')->item(0)->nodeValue;
-    $color = $each_pro->getElementsByTagName('color')->item(0)->nodeValue;
+
+public function display_all_products_to_homepage() {
+
+  $this->homepage_product = new DomDocument;
+  $this->homepage_product->load('product.xml');
+  $shoes =    $this->homepage_product->getElementsByTagName('shoes')->item(0);
+  $all_shoe = $this->homepage_product->getElementsByTagName('shoe');
+  $this->read_all_shoes($all_shoe);
+}
+
+
+public function read_all_shoes($all_shoes) {
+
+foreach ($all_shoes as $each_shoe) {
+
+    $id    = $each_shoe->getElementsByTagName('id')->item(0)->nodeValue;
+    $image = $each_shoe->getElementsByTagName('image')->item(0)->nodeValue;
+    $name  = $each_shoe->getElementsByTagName('shoeName')->item(0)->nodeValue;
+    $price = number_format($each_shoe->getElementsByTagName('price')->item(0)->nodeValue);
+    $color = $each_shoe->getElementsByTagName('color')->item(0)->nodeValue;
 
     echo "<div class='col-sm-4 cardBx'> ";
     echo "<form class = 'form' method='POST' action='cartMan.php'>";
@@ -35,9 +45,103 @@ function read() {
     echo "</form>";
     echo "</div>  ";
 
-  }
 
+  }
 }
 
 
+
+}
+
+$my_product = new Cru();
+
+class Cart extends Cru {
+
+public function add_to_cart($id, $img, $name, $price, $color) {
+    
+    $xmlfile = 'cart.xml'; 
+    $xmls = new DomDocument;
+    $xmls->formatOutput = true;
+    $xmls->preserveWhiteSpace = false;
+    $xmls->load($xmlfile);
+    $products = $xmls->getElementsByTagName('shoes');
+    $product  = $xmls->getElementsByTagName('shoe');
+    $tf = 0;
+
+    foreach($product as $prod) {
+      if($prod->getElementsByTagName('id')->item(0)->nodeValue == $id){
+        $tf = 1;
+      }
+    }
+
+    if($tf != 0 or $tf >= 0){
+
+      $newProd = $xmls->createELement('shoe');
+      $newProd->appEndChild($xmls->createElement('id',$id));
+      $newProd->appEndChild($xmls->createElement('image',$img));
+      $newProd->appEndChild($xmls->createElement('shoeName', $name));
+      $newProd->appEndChild($xmls->createElement('price', $price));
+      $newProd->appEndChild($xmls->createElement('color', $color));
+      $products->item(0)->appEndChild($newProd);    
+      $this->save_porduct($xmls, $xmlfile );
+}
+}
+
+public function save_porduct($doccument, $file){
+
+  if($doccument->Save($file)) {
+    echo "<script>alert('Success to add item');</script>";
+    header("Location: homepage.php");
+    // exit();
+  }else {
+    echo "<script>alert('Failed to add item');</script>";
+    header("Location: homepage.php");
+    // exit();
+  }      
+
+
+}
+
+}
+
+$Cart = new Cart();
+
+
+class Wishlist extends Cart{
+
+public function add_to_wishlist($id, $img, $name, $price, $color) {
+    
+    $xmlfile = 'wishlist.xml'; 
+    $xmls = new DomDocument;
+    $xmls->formatOutput = true;
+    $xmls->preserveWhiteSpace = false;
+    $xmls->load($xmlfile);
+    $products = $xmls->getElementsByTagName('shoes');
+    $product  = $xmls->getElementsByTagName('shoe');
+    $tf = 0;
+
+    foreach($product as $prod) {
+      if($prod->getElementsByTagName('id')->item(0)->nodeValue == $id){
+        $tf = 1;
+      }
+    }
+
+    if($tf != 0 or $tf >= 0){
+
+      $newProd = $xmls->createELement('shoe');
+      $newProd->appEndChild($xmls->createElement('id',$id));
+      $newProd->appEndChild($xmls->createElement('image',$img));
+      $newProd->appEndChild($xmls->createElement('shoeName', $name));
+      $newProd->appEndChild($xmls->createElement('price', $price));
+      $newProd->appEndChild($xmls->createElement('color', $color));
+      $products->item(0)->appEndChild($newProd);    
+      $this->save_porduct($xmls, $xmlfile);
+      }
+  }
+  function display(){
+    echo "hello";
+  }
+}
+
+$wishlist  = new Wishlist();
 ?>

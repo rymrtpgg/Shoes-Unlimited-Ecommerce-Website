@@ -2,6 +2,49 @@
 
 class wishListCrud {
 
+// -----Create function start
+function moveToCart($id, $img, $name, $price, $color) {
+
+  $xmlfile = 'cart.xml'; 
+  $xmls = new DomDocument;
+  $xmls->formatOutput = true;
+  $xmls->preserveWhiteSpace = false;
+  $xmls->load($xmlfile);
+  $products = $xmls->getElementsByTagName('shoes');
+  $product = $xmls->getElementsByTagName('shoe');
+  $tf = 0;
+
+
+  foreach($product as $prod) {
+    if($prod->getElementsByTagName('id')->item(0)->nodeValue == $id){
+      $tf = 1;
+    }
+  }
+
+  if($tf != 0){
+    echo $tf;
+    echo "Add faileds";
+  }elseif($tf >= 0) {
+
+  $newProd = $xmls->createELement('shoe');
+  $newProd->appEndChild($xmls->createElement('id',$id));
+  $newProd->appEndChild($xmls->createElement('image',$img));
+  $newProd->appEndChild($xmls->createElement('shoeName', $name));
+  $newProd->appEndChild($xmls->createElement('price', $price));
+  $newProd->appEndChild($xmls->createElement('color', $color));
+  $products->item(0)->appEndChild($newProd);
+  
+  $test = $xmls->Save('cart.xml');
+
+    if($test) {
+      echo "<script>alert('Success to add item');</script>";
+      exit();
+    }else {
+      echo "<script>alert('Success to add item');</script>";
+      exit();
+    }
+  }
+}// -----Create function End
 	// Read wish list function start
 	function readWishList() {
 	  $xml = new DomDocument;
