@@ -1,13 +1,6 @@
 <?xml version="1.0"?>
 <shoes>
   <shoe>
-    <id>400</id>
-    <image>product_img/product1.png</image>
-    <shoeName>React-Infinity-Run</shoeName>
-    <price>3000</price>
-    <color>Cloud White / Core Black / Cloud Whit</color>
-  </shoe>
-  <shoe>
     <id>200</id>
     <image>product_img/product2.png</image>
     <shoeName>React-Infinity-Run</shoeName>
@@ -15,8 +8,8 @@
     <color>Cloud White / Core Black / Cloud Whit</color>
   </shoe>
   <shoe>
-    <id>300</id>
-    <image>product_img/product3.png</image>
+    <id>100</id>
+    <image>product_img/product1.png</image>
     <shoeName>React-Infinity-Run</shoeName>
     <price>3000</price>
     <color>Cloud White / Core Black / Cloud Whit</color>

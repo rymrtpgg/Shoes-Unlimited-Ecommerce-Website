@@ -1,30 +1,58 @@
 <?php
-	
-	include "cartFunctions.php";
-	$crud = new cartCrud();
 
-	if(isset($_POST['cartBtn'])){
+include "includes.php";
 
-		$id = $_POST['id'];
-		$image = $_POST['image'];
-		$name = $_POST['prodName'];
-		$price = $_POST['price'];
-		$color = $_POST['color'];
 
-		$crud->create($id, $image, $name, $price, $color);
+if(isset($_POST['wishBtn'])) {
+	$my_product->id = $_POST['id'];
+	$my_product->img = $_POST['image'];
+	$my_product->name = $_POST['prodName'];
+	$my_product->price = $_POST['price'];
+	$my_product->color = $_POST['color'];
+	$my_product->tracker = 0;
+	$my_product->add_shoes_to_this('wishlist.xml');
+}
+elseif(isset($_POST['cartBtn'])) {
 
-	}elseif(isset($_POST['cartRemove'])){
+	$my_product->id = $_POST['id'];
+	$my_product->img = $_POST['image'];
+	$my_product->name = $_POST['prodName'];
+	$my_product->price = $_POST['price'];
+	$my_product->color = $_POST['color'];
+	$my_product->tracker = 0;
+	$my_product->add_shoes_to_this('cart.xml');	
+}
+elseif(isset($_POST['wishlist_removeBtn'])) {
 
-		$id = $_POST['id'];
-		$crud->cartRemove($id);
-		
-	}else{
-		
-		echo "<script>alert('No')</script>";
-		// header("Location: homepage.php");
-		exit();
-	}
+	$this_id = $_POST['id'];
+	$my_product->file = 'wishlist.xml';
+	$my_product->counter = 0;
+	$my_product->remove_item_to_this($this_id);
 
+}
+elseif(isset($_POST['cart_removeBtn'])) {
+
+	$this_id = $_POST['id'];
+	$my_product->file = 'cart.xml';
+	$my_product->counter = 0;
+	$my_product->remove_item_to_this($this_id);
+
+}
+elseif(isset($_POST['move_to_cartBtn'])) {
+
+	$my_product->id = $_POST['id'];
+	$my_product->file = 'wishlist.xml';
+	$my_product->move_file = 'cart.xml';
+	$my_product->move_shoes();
+
+}
+elseif(isset($_POST['move_to_wishlist'])) {
+
+	$my_product->id = $_POST['id'];
+	$my_product->file = 'cart.xml';
+	$my_product->move_file = 'wishlist.xml';
+	$my_product->move_shoes();
+}
 
 
 ?>
