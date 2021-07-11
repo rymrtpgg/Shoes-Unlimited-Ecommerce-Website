@@ -12,7 +12,7 @@
   <title>Shoes Unlimited | Shopping Cart</title>
 
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-  <link rel="stylesheet" href="style/cart.css">
+  <link rel="stylesheet" href="../style/cart.css">
   
 
 </head>
@@ -30,7 +30,7 @@
             
 <?php 
  
-  $my_product->display_all_shoes_from('cart.xml');
+  $my_product->display_all_shoes_from('XML/cart.xml');
 ?>
 
 

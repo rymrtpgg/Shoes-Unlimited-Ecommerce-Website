@@ -1,28 +1,2 @@
 <?xml version="1.0"?>
-<<<<<<< HEAD
-<shoes>
-  <shoe>
-    <id>200</id>
-    <image>product_img/product2.png</image>
-    <shoeName>React-Infinity-Run</shoeName>
-    <price>4000</price>
-    <color>Cloud White / Core Black / Cloud Whit</color>
-  </shoe>
-  <shoe>
-    <id>100</id>
-    <image>product_img/product1.png</image>
-    <shoeName>React-Infinity-Run</shoeName>
-    <price>3000</price>
-    <color>Cloud White / Core Black / Cloud Whit</color>
-  </shoe>
-  <shoe>
-    <id>100</id>
-    <image>product_img/product1.png</image>
-    <shoeName>React-Infinity-Run</shoeName>
-    <price>3000</price>
-    <color>Cloud White / Core Black / Cloud Whit</color>
-  </shoe>
-</shoes>
-=======
 <shoes/>
->>>>>>> master

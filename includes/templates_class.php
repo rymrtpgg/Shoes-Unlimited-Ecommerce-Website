@@ -40,7 +40,7 @@ class Template {
   public function cart_template(){
 
     $this->documents = new DomDocument;
-    $this->documents->load('cart.xml');
+    $this->documents->load('XML/cart.xml');
 
     $parent_shoes = $this->documents->getElementsByTagName('shoes');
     $child_shoes  = $this->documents->getElementsByTagName('shoe');
@@ -143,7 +143,7 @@ class Template {
 function priceDetails(){
 
   $this->documents = new DomDocument;
-  $this->documents->load('cart.xml');
+  $this->documents->load('XML/cart.xml');
 
   $parent_shoes = $this->documents->getElementsByTagName('shoes')->item(0);
   $child_shoes  = $this->documents->getElementsByTagName('shoe');

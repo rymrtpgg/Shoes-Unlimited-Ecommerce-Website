@@ -28,10 +28,10 @@ class Shoes extends Template{
 
 
 
-    if($this_file == "cart.xml"){
+    if($this_file == "XML/cart.xml"){
       $this->cart_template();
     }
-    elseif($this_file == "wishlist.xml"){
+    elseif($this_file == "XML/wishlist.xml"){
       $this->wishlist_template($child_shoes);
 
     }else{
@@ -71,10 +71,10 @@ class Shoes extends Template{
       $test = $this->documents->save($file);
 
 
-    if($file == "cart.xml"){
+    if($file == "XML/cart.xml"){
       header("Location: cart.php");
     }
-    elseif($file == "wishlist.xml"){
+    elseif($file == "XML/wishlist.xml"){
       header("Location: wishlist.php");
 
     }else{
@@ -114,11 +114,11 @@ class Shoes extends Template{
       $parent_shoes->item(0)->removeChild($old_index_node);
       $test = $this->documents->save($this->file);
   
-      if($this->file == "cart.xml"){
+      if($this->file == "XML/cart.xml"){
         header("Location: cart.php");
         // echo "cart remove success";
       }
-      elseif($this->file == "wishlist.xml"){
+      elseif($this->file == "XML/wishlist.xml"){
         header("Location: wishlist.php");
         // echo "wishlist remove success";
 
