@@ -3,7 +3,7 @@
 <head>
 	
 	<title> Login | Shoes Unlimited </title>
-	<link rel="stylesheet" type="text/css" href="Logi&Signup/style.css">
+	<link rel="stylesheet" type="text/css" href="Logi&Signup/index.css">
 	
 </head>
 <body>

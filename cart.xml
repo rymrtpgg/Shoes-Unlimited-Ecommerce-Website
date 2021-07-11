@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<<<<<<< HEAD
 <shoes>
   <shoe>
     <id>200</id>
@@ -23,6 +22,4 @@
     <color>Cloud White / Core Black / Cloud Whit</color>
   </shoe>
 </shoes>
-=======
-<shoes/>
->>>>>>> master
+
