@@ -5,11 +5,6 @@
 	<title> Login | Shoes Unlimited </title>
 	<link rel="stylesheet" type="text/css" href="Logi&Signup/style.css">
 	
-	<!-- jquery start -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>	
-	<!-- Jquery end -->
-
 </head>
 <body>
 	<section>
@@ -48,6 +43,7 @@
 			</div>
 		</div>
 	</section>
+
 	<script type="text/javascript">
 		function toggle(){
 			var container = document.querySelector('.container');
@@ -55,6 +51,12 @@
 		}
 	</script>
 	<style>.error {color: red;}</style>
+	
+	<!-- jquery start -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>	
+	<!-- Jquery end -->
+
 	<script src="https://www.google.com/recaptcha/api.js"></script>
 	<script src="js/verifySignup.js" type="text/javascript" ></script>
 	<script src="js/verifySignin.js" type="text/javascript"></script>

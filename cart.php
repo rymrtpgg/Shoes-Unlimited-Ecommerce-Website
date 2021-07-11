@@ -1,4 +1,6 @@
 <?php include("includes.php"); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,23 +8,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+  
   <title>Shoes Unlimited | Shopping Cart</title>
+
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   <link rel="stylesheet" href="style/cart.css">
   
-  <style type="text/css">
-    a {
-      text-decoration: none;
-      color: white;
-    }
-  </style>
+
 </head>
 <body>
     
 
-    
+  
+
+
 <!-- ------------------ SCHOES CART START --------------------- -->
 <div class="wrapper">
   <div class="wrapper_content">
@@ -30,10 +29,8 @@
 
             
 <?php 
-  include "cartFunctions.php";
-  $cartCrud = new cartCrud();
-  $cartCrud->cardDisplay();
-
+ 
+  $my_product->display_all_shoes_from('cart.xml');
 ?>
 
 
@@ -95,11 +92,15 @@
 
 <!-- ------------------ SCHOES PRICE DETAILS START --------------------- -->
 
-<?php $cartCrud->priceDetails();?>
+
+    <?php $my_product->priceDetails(); ?>
+
 
 </div>
 <!-- ------------------ SCHOES PRICE DETAILS END --------------------- -->
 
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>

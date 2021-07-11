@@ -9,8 +9,6 @@
   <link rel="stylesheet" type="text/css" href="style/homepage.css">  
   <link rel="stylesheet" type="text/css" href="style/home.css">  
 </head>
-
-
 <body>
 
 
@@ -22,7 +20,7 @@
 
 
 
-      <?php $my_product->display_all_products_to_homepage(); ?>
+      <?php $my_product->display_all_shoes_from('product.xml'); ?>
   
 
     </div>

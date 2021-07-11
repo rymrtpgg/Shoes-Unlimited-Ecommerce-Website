@@ -1,7 +1,6 @@
 <?php 
   include "includes.php";
-  include "wishlistFunction.php";
-  $wishlist = new wishListCrud();
+
 ?>
 <html>
 <head>
@@ -17,18 +16,15 @@
 
 
   <!-- Product Start -->
+
     <div class="container">      
-    <?php $wishlist->readWishList(); ?>
+    <?php $my_product->display_all_shoes_from('wishlist.xml'); ?>
     </div>
+
   <!-- Product End -->   
 
 
-
-
-
-
-
-<?php include("footer.php") ?>
+<?php  ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>

@@ -9,10 +9,10 @@
 }
 
 body{
+    background-image: url("../img/bg.jpg");
     background-color: #dcdde1;
     line-height: 22px;
     height: 100vh;
-    background-image: url(./bg.jpg);
 }
 
 .green{
@@ -283,7 +283,6 @@ body{
 
 .body ul li:hover,.body ul li.active{
     border-color: #ff3f6c;
-    
     color: #ff3f6c;
 }
 
@@ -385,3 +384,4 @@ body{
         display: none;
     }   
 }
+

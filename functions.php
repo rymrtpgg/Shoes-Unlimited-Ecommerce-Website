@@ -1,147 +1,228 @@
+
+<?php include("templates_class.php"); ?>
 <?php 
 
-class Cru {
+class Shoes extends Template{
+
+  public $name;
+  public $id;
+  public $img;
+  public $price;
+  public $color;
+  public $xml_file;
+  public $documents;
+  public $parent_shoes;
+  public $child_shoes;
+  public $tracker;
+  public $counter;
+  public $file;
+  public $move_file;
 
 
-public $homepage_product;
-public $cart_product;
+  public function display_all_shoes_from($this_file) {
 
-
-public function display_all_products_to_homepage() {
-
-  $this->homepage_product = new DomDocument;
-  $this->homepage_product->load('product.xml');
-  $shoes =    $this->homepage_product->getElementsByTagName('shoes')->item(0);
-  $all_shoe = $this->homepage_product->getElementsByTagName('shoe');
-  $this->read_all_shoes($all_shoe);
-}
-
-
-public function read_all_shoes($all_shoes) {
-
-foreach ($all_shoes as $each_shoe) {
-
-    $id    = $each_shoe->getElementsByTagName('id')->item(0)->nodeValue;
-    $image = $each_shoe->getElementsByTagName('image')->item(0)->nodeValue;
-    $name  = $each_shoe->getElementsByTagName('shoeName')->item(0)->nodeValue;
-    $price = number_format($each_shoe->getElementsByTagName('price')->item(0)->nodeValue);
-    $color = $each_shoe->getElementsByTagName('color')->item(0)->nodeValue;
-
-    echo "<div class='col-sm-4 cardBx'> ";
-    echo "<form class = 'form' method='POST' action='cartMan.php'>";
-    echo "<div class='card'>";
-    echo "<img name='image' src=' " . $image . "' alt='nike' width='100%' height='330'>";
-    echo "<p><h1 name='prodName' value ='React-Infinity-Run'> ". $name . $id . " </h1></p>";
-    echo "<p name='price' > " . $price . "</p>";
-    echo "<p>Color: ". $color ."</p>";
-    echo "<p><button type='submit' class='cartBtn' id='cartBtn' name='cartBtn'>Add to Cart</button></p>";
-    echo "<p><button type='submit' class='wishBtn' id='wishBtn' name='wishBtn'>Add to WishList</button></p>";
-    echo "<input type='hidden' name='id' value='".$id."'>";
-    echo "<input type='hidden' name='image' value='".$image."'>";
-    echo "<input type='hidden' name='prodName' value='".$name."'>";
-    echo "<input type='hidden' name='price' value='".$price."'>";
-    echo "<input type='hidden' name='color' value='".$color."'>";
-    echo "</div>";
-    echo "</form>";
-    echo "</div>  ";
-
-
-  }
-}
+    $this->documents = new DomDocument;
+    $this->documents->load($this_file);
+    $parent_shoes = $this->documents->getElementsByTagName('shoes')->item(0);
+    $child_shoes  = $this->documents->getElementsByTagName('shoe');
 
 
 
-}
+    if($this_file == "cart.xml"){
+      $this->cart_template();
+    }
+    elseif($this_file == "wishlist.xml"){
+      $this->wishlist_template($child_shoes);
 
-$my_product = new Cru();
-
-class Cart extends Cru {
-
-public function add_to_cart($id, $img, $name, $price, $color) {
+    }else{
+      $this->homepage_template($child_shoes);
+    }
     
-    $xmlfile = 'cart.xml'; 
-    $xmls = new DomDocument;
-    $xmls->formatOutput = true;
-    $xmls->preserveWhiteSpace = false;
-    $xmls->load($xmlfile);
-    $products = $xmls->getElementsByTagName('shoes');
-    $product  = $xmls->getElementsByTagName('shoe');
-    $tf = 0;
+  }
 
-    foreach($product as $prod) {
-      if($prod->getElementsByTagName('id')->item(0)->nodeValue == $id){
-        $tf = 1;
+  public function add_shoes_to_this($file) {
+
+    $this->documents = new DomDocument;
+    $this->documents->load($file);
+    $this->documents->formatOutput = true;
+    $this->documents->preserveWhiteSpace = false;
+    $this->documents->load($file);
+
+    $parent_shoes = $this->documents->getElementsByTagName('shoes');
+    $child_shoes  = $this->documents->getElementsByTagName('shoe');
+
+    foreach($child_shoes as $each_shoes) {
+      if($each_shoes->getElementsByTagName('id')->item(0)->nodeValue == $this->id){
+        $this->tracker = 1;
       }
     }
 
-    if($tf != 0 or $tf >= 0){
+    if($this->tracker != 0 or $this->tracker >= 0) {
 
-      $newProd = $xmls->createELement('shoe');
-      $newProd->appEndChild($xmls->createElement('id',$id));
-      $newProd->appEndChild($xmls->createElement('image',$img));
-      $newProd->appEndChild($xmls->createElement('shoeName', $name));
-      $newProd->appEndChild($xmls->createElement('price', $price));
-      $newProd->appEndChild($xmls->createElement('color', $color));
-      $products->item(0)->appEndChild($newProd);    
-      $this->save_porduct($xmls, $xmlfile );
-}
-}
+      $new_shoes = $this->documents->createELement('shoe');
+      $new_shoes->appEndChild($this->documents->createElement('id',$this->id));
+      $new_shoes->appEndChild($this->documents->createElement('image',$this->img));
+      $new_shoes->appEndChild($this->documents->createElement('shoeName', $this->name));
+      $new_shoes->appEndChild($this->documents->createElement('price', $this->price));
+      $new_shoes->appEndChild($this->documents->createElement('color', $this->color));
 
-public function save_porduct($doccument, $file){
-
-  if($doccument->Save($file)) {
-    echo "<script>alert('Success to add item');</script>";
-    header("Location: homepage.php");
-    // exit();
-  }else {
-    echo "<script>alert('Failed to add item');</script>";
-    header("Location: homepage.php");
-    // exit();
-  }      
+      $parent_shoes->item(0)->appendChild($new_shoes);   
+      
+      $test = $this->documents->save($file);
 
 
-}
+    if($file == "cart.xml"){
+      header("Location: cart.php");
+    }
+    elseif($file == "wishlist.xml"){
+      header("Location: wishlist.php");
 
-}
-
-$Cart = new Cart();
-
-
-class Wishlist extends Cart{
-
-public function add_to_wishlist($id, $img, $name, $price, $color) {
-    
-    $xmlfile = 'wishlist.xml'; 
-    $xmls = new DomDocument;
-    $xmls->formatOutput = true;
-    $xmls->preserveWhiteSpace = false;
-    $xmls->load($xmlfile);
-    $products = $xmls->getElementsByTagName('shoes');
-    $product  = $xmls->getElementsByTagName('shoe');
-    $tf = 0;
-
-    foreach($product as $prod) {
-      if($prod->getElementsByTagName('id')->item(0)->nodeValue == $id){
-        $tf = 1;
-      }
+    }else{
+      header("Location: homepage.php");
     }
 
-    if($tf != 0 or $tf >= 0){
+    }
+  }
 
-      $newProd = $xmls->createELement('shoe');
-      $newProd->appEndChild($xmls->createElement('id',$id));
-      $newProd->appEndChild($xmls->createElement('image',$img));
-      $newProd->appEndChild($xmls->createElement('shoeName', $name));
-      $newProd->appEndChild($xmls->createElement('price', $price));
-      $newProd->appEndChild($xmls->createElement('color', $color));
-      $products->item(0)->appEndChild($newProd);    
-      $this->save_porduct($xmls, $xmlfile);
+
+  public function remove_item_to_this($item_id) {
+
+    $this->documents = new DomDocument;
+    $this->documents->formatOutput = true;
+    $this->documents->preserveWhiteSpace = false;
+    $this->documents->load($this->file);
+
+
+    $parent_shoes = $this->documents->getElementsByTagName('shoes');
+    $child_shoes  = $this->documents->getElementsByTagName('shoe');
+
+
+    foreach($child_shoes as $each_shoes) {
+
+      $old_index_node_id = $each_shoes->getElementsByTagName('id')->item(0)->nodeValue;
+
+      if($item_id === $old_index_node_id) {
+
+        $this->tracker = 1;
+        $old_index_node = $this->documents->getElementsByTagName('shoe')->item($this->counter);
+
       }
-  }
-  function display(){
-    echo "hello";
-  }
-}
+      $this->counter++;
+    }
 
-$wishlist  = new Wishlist();
+    if($this->tracker != 0) {
+      $parent_shoes->item(0)->removeChild($old_index_node);
+      $test = $this->documents->save($this->file);
+  
+      if($this->file == "cart.xml"){
+        header("Location: cart.php");
+        // echo "cart remove success";
+      }
+      elseif($this->file == "wishlist.xml"){
+        header("Location: wishlist.php");
+        // echo "wishlist remove success";
+
+
+      }else{
+        // header("Location: homepage.php");
+        echo "homepage remove success";
+
+      }
+        
+    }
+
+  }
+
+
+  public function move_shoes() {
+
+    $this->documents = new DomDocument;
+    $this->documents->formatOutput = true;
+    $this->documents->preserveWhiteSpace = false;
+    $this->documents->load($this->file);
+
+    $parent_shoes = $this->documents->getElementsByTagName('shoes');
+    $child_shoes  = $this->documents->getElementsByTagName('shoe');
+
+    $counter = 0;
+    $id_tracker = 0;
+
+
+    foreach($child_shoes as $each_shoes){
+
+      $old_id = $each_shoes->getElementsByTagName('id')->item(0)->nodeValue;
+
+      if($this->id == $old_id ){
+
+        $id_tracker = 1;
+        $old_node = $this->documents->getElementsByTagName('shoe')->item($counter);     
+
+        $id           = $this->documents->getElementsByTagName('id')->item($counter)->nodeValue;
+        $img          = $this->documents->getElementsByTagName('image')->item($counter)->nodeValue;
+        $name         = $this->documents->getElementsByTagName('shoeName')->item($counter)->nodeValue;
+        $color        = $this->documents->getElementsByTagName('color')->item($counter)->nodeValue;
+        $price_input  = $this->documents->getElementsByTagName('price')->item($counter)->nodeValue;
+
+      }
+      $counter++;
+    }
+
+    if($id_tracker != 0){
+
+      $this->id     = $id;
+      $this->img  = $img;
+      $this->name   = $name;
+      $this->price  = $price_input;
+      $this->color  = $color;
+
+      $this->add_shoes_to_this($this->move_file);
+      $this->remove_item_to_this($this->id);
+
+      // $parent_shoes->item(0)->removeChild($old_index_node);
+      // $test = $this->documents->save($this->file);
+
+    //   if($test) {
+    //     echo "yes";
+    //   }else {
+    //     echo "no";
+    //   }
+    // }
+
+      // $parent_shoes->item(0)->removeChild($old_node);
+      // $test = $this->documents->save($this->move_file);
+
+      //   if($test){
+      //     echo $old_id;
+      //     echo $counter;
+
+      //     echo "yes";
+      //   }else {
+      //     echo "no";
+      //   }
+
+
+    // echo "<pre>";
+    // print_r($old_node);
+    // echo "</pre>";
+
+    // echo $id   . "<br />";
+    // echo $img  . "<br />";
+    // echo $name . "<br />";
+    // echo $color. "<br />";
+    // echo $price_input. "<br />";
+
+      
+
+    }
+  }
+
+ public function remove_node_at_this_index($index) {
+
+ }   
+  
+  
+
+
+}
+$my_product = new Shoes();
 ?>
