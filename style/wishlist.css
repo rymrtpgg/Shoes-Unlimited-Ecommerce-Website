@@ -1,0 +1,10 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../img/bg.jpg");
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;    
+  height: auto;
+}
