@@ -1,2 +1,10 @@
 <?xml version="1.0"?>
-<shoes/>
+<shoes>
+  <shoe>
+    <id>100</id>
+    <image>product_img/product1.png</image>
+    <shoeName>React-Infinity-Run</shoeName>
+    <price>3000</price>
+    <color>Cloud White / Core Black / Cloud Whit</color>
+  </shoe>
+</shoes>
