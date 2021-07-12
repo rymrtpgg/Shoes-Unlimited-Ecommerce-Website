@@ -7,16 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../style/nav_bar.css">
+  <link rel="stylesheet" type="text/css" href="../style/tooltip.css">
   <script type="text/javascript" src="../js/ajax.js"></script>
 </head>
 
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="homepage.php">SHOES UNLIMITED</a>
+    <div class="navbar-header ">
+      <a class="navbar-brand " href="homepage.php">SHOES UNLIMITED</a>
+      <span class="tooltiptext">Back to home</span>
     </div>
-    <!-- <ul class="nav navbar-nav">
+
+    <!-- 
+    <ul class="nav navbar-nav">
          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Brands<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#"></a></li>
@@ -34,7 +38,9 @@
         </ul>
         <li><a href="#men">Men</a></li>
         <li><a href="#women">Women</a></li>
-    </ul> -->
+    </ul> 
+  -->
+
     <form class="navbar-form navbar-right" action="/action_page.php">
       <div class="input-group">
 
@@ -53,6 +59,7 @@
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#"></a></li>
+          <li><a href="developers/">The Developers</a></li>
           <li><a href="#">Account Setting</a></li>
           <li><a href="logout.php">Log Out</a></li>
         </ul>

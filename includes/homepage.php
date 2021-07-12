@@ -23,26 +23,11 @@
     <div class="col">
 
 
-
       <?php $my_product->display_all_shoes_from('XML/product.xml'); ?>
-
-      <?php 
-
-        
-
-
-
-      ?>
-  
 
     </div>
   </div>
   <!----------------------- Main Container End  --------------------------->
-
-
-
-
-  
 
 <?php include("footer.php") ?>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
