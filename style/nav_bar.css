@@ -1,0 +1,13 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#display_suggestion {
+	background: whitesmoke;
+	color: black;
+	width: 270px;
+	position: absolute;
+	border: 1px solid black;
+}
