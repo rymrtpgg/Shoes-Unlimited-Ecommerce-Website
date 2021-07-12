@@ -1,3 +1,10 @@
+<?php 
+
+	session_start();
+  if(isset($_SESSION['username'])) {
+    header("Location: includes/homepage.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,11 +21,11 @@
 					<img src="Logi&Signup/img/img3.jpg">
 				</div>
 				<div class="formBx">
-					<form action="Logi&Signup/recaptcha/recaptcha_Conf.php" method="POST" id="form">
+					<form action="includes/form_management.php" method="POST" id="form">
 						<h2>Sign In</h2>
 						<input type="text" name="userName" id="userName" placeholder="Username">
 						<input type="password" name="password" id="password" placeholder="Password">
-						<div class="g-recaptcha" data-sitekey="6LfOaMwaAAAAAOVgL-vwP6WDUoDsDhpVd4cxOgfG"></div>
+						<div class="g-recaptcha" data-sitekey="6LfOaMwaAAAAAOVgL-vwP6WDUoDsDhpVd4cxOgfG"></div> <!--recaptcha-->
 						<input type="submit" id="signInBtn" name="signInBtn" value="Login">
 						<p class="signUp"> Don't have an account? <a href="#" onclick="toggle();">Sign Up!</a></p>
 					</form>
@@ -26,13 +33,13 @@
 			</div>
 			<div class="user signupBx">
 				<div class="formBx">
-					<form action="Logi&Signup/recaptcha/recaptcha_Conf.php" method="POST" id="forms">
+					<form action="includes/form_management.php" method="POST" id="forms">
 						<h2>Create an Account</h2>
 						<input type="text" name="unameup" id="unameup" placeholder="Username">
 						<input type="email" name="emailup" id="emailup" placeholder="Email">
 						<input type="password" name="passup" id="passup" placeholder="Password">
 						<input type="password" name="conf_passup" id="conf-passup" placeholder="Confirm-Password">
-						<div class="g-recaptcha" data-sitekey="6LfOaMwaAAAAAOVgL-vwP6WDUoDsDhpVd4cxOgfG"></div>
+						<div class="g-recaptcha" data-sitekey="6LfOaMwaAAAAAOVgL-vwP6WDUoDsDhpVd4cxOgfG"></div>    <!--recaptcha-->
 						<input type="submit" id="signupBtn" name="signupBtn" value="Sign Up">
 						<p class="signup"> Already have an account? <a href="" onclick="toggle();">Sign In!</a></p>	
 					</form>

@@ -1,5 +1,4 @@
 <?php include "includes.php"; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,7 @@
 </head>
 <body>
 
-
+<?php include("navbar.php") ?>  
   
   <!----------------------- Main Container Start  --------------------------->
 
@@ -21,6 +20,14 @@
 
 
       <?php $my_product->display_all_shoes_from('XML/product.xml'); ?>
+
+      <?php 
+
+        
+
+
+
+      ?>
   
 
     </div>

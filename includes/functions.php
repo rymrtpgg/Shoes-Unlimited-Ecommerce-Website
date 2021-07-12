@@ -1,6 +1,6 @@
 
 <?php include("templates_class.php"); ?>
-<?php 
+<?php
 
 class Shoes extends Template{
 

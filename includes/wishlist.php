@@ -1,6 +1,6 @@
 <?php 
   include "includes.php";
-
+  
 ?>
 <html>
 <head>
@@ -14,6 +14,7 @@
     
 <body>
 
+<?php include("navbar.php") ?> 
 
   <!-- Product Start -->
 

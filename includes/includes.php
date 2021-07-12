@@ -1,7 +1,9 @@
 <?php 
 
-include "functions.php";
-include "navbar.php"; 
+// include("database.php");
+include("config.php");
+include("functions.php");
+include("recaptcha_validation.php");
 
 
 ?>

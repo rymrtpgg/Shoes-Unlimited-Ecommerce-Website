@@ -2,6 +2,11 @@
 
 include "includes.php";
 
+  session_start();
+  if(!isset($_SESSION['username'])) {
+    header("Location: ../index.php"); 
+  }
+
 
 if(isset($_POST['wishBtn'])) {
 	$my_product->id = $_POST['id'];
