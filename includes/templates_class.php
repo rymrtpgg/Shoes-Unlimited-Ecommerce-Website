@@ -183,17 +183,17 @@ function priceDetails(){
   echo "<div class='price_details'>";
   echo "<div class='item'>";
   echo "<p>Product Total :</p>";
-  echo "<p>₱ ".  number_format($tracker) ."</p></div>";
+  echo "<p>₱ ".  number_format($tracker, 2) ."</p></div>";
   echo "<div class='item'>";
   echo "<p>Item Discount :</p>";
-  echo "<p class='green'>-₱ " . number_format($item_discount) . "</p></div>";
+  echo "<p class='green'>-₱ " . number_format($item_discount, 2) . "</p></div>";
   
   echo "<div class='item'>";
   echo "<p>Order Total :</p>";
-  echo "<p>₱ " .number_format($order_total)."</p></div>";
+  echo "<p>₱ " . number_format($order_total, 2)."</p></div>";
   echo "<div class='item'>";
   echo "<p>Delivery Charges :</p>";
-  echo "<p><span style='text-decoration: line-through;'></span>₱ ".number_format($delivery_charge) ." <span class='green'>FREE</span></p></div>";
+  echo "<p><span style='text-decoration: line-through;'></span>₱ ". number_format($delivery_charge, 2) ." <span class='green'>FREE</span></p></div>";
   echo "<div class='coupon'>";
   echo "<input type='text' placeholder='Enter Voucher Code'>";
   echo "<input type='submit' class='btns'></div>";

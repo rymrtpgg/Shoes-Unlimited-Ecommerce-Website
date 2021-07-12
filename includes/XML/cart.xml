@@ -1,2 +1,17 @@
 <?xml version="1.0"?>
-<shoes/>
+<shoes>
+  <shoe>
+    <id>200</id>
+    <image>product_img/product2.png</image>
+    <shoeName>Adidas-Grand-Court-Shoes</shoeName>
+    <price>4000</price>
+    <color>Cloud Whitee / Core Black / Cloud White</color>
+  </shoe>
+  <shoe>
+    <id>300</id>
+    <image>product_img/product3.png</image>
+    <shoeName>Adidas-Lego-Sport-cf-Shoes</shoeName>
+    <price>2500</price>
+    <color>Cloud Whitee / Core Black / Cloud White</color>
+  </shoe>
+</shoes>

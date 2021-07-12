@@ -5,62 +5,62 @@
 		<image>product_img/product1.png</image>
 		<shoeName>React-Infinity-Run-Shoes</shoeName>
 		<price>3000</price>
-		<color>Cloud White / Core Black / Cloud Whit</color>
+		<color>Cloud Whitee / Core Black / Cloud White</color>
 	</shoe>
 		<shoe>
 		<id>200</id>	
 		<image>product_img/product2.png</image>	
 		<shoeName>Adidas-Grand-Court-Shoes</shoeName>
 		<price>4000</price>
-		<color>Cloud White / Core Black / Cloud Whit</color>
+		<color>Cloud Whitee / Core Black / Cloud White</color>
 	</shoe>
 		<shoe>
 		<id>300</id>	
 		<image>product_img/product3.png</image>	
 		<shoeName>Adidas-Lego-Sport-cf-Shoes</shoeName>
 		<price>2500</price>
-		<color>Cloud White / Core Black / Cloud Whit</color>
+		<color>Cloud Whitee / Core Black / Cloud White</color>
 	</shoe>
 		<shoe>
 		<id>400</id>	
 		<image>product_img/product4.png</image>	
 		<shoeName>Adidas-Tensour-Shoes</shoeName>
 		<price>5600</price>
-		<color>Cloud White / Core Black / Cloud Whit</color>
+		<color>Cloud Whitee / Core Black / Cloud White</color>
 	</shoe>			
 	<shoe>
 		<id>400</id>	
 		<image>product_img/product5.png</image>	
 		<shoeName>Adidas-Rapidazen-Lego-Infant</shoeName>
 		<price>3600</price>
-		<color>Cloud White / Core Black / Cloud Whit</color>
+		<color>Cloud Whitee / Core Black / Cloud White</color>
 	</shoe>			
 	<shoe>
 		<id>400</id>	
 		<image>product_img/product6.png</image>	
 		<shoeName>World-Balance-Court-Rival-Big</shoeName>
 		<price>3800</price>
-		<color>Cloud White / Core Black / Cloud Whit</color>
+		<color>Cloud Whitee / Core Black / Cloud White</color>
 	</shoe>
 	<shoe>
 		<id>400</id>	
 		<image>product_img/product7.png</image>	
 		<shoeName>SC-PREMIERE-MENS-Shoes</shoeName>
 		<price>3900</price>
-		<color>Cloud White / Core Black / Cloud Whit</color>
+		<color>Cloud Whitee / Core Black / Cloud White</color>
 	</shoe>
 	<shoe>
 		<id>400</id>	
 		<image>product_img/product8.png</image>	
 		<shoeName>ASICS-MENS-JAPAN-Shoes</shoeName>
 		<price>7000</price>
-		<color>Cloud White / Core Black / Cloud Whit</color>
+		<color>Cloud Whitee / Core Black / Cloud White</color>
 	</shoe>	
 	<shoe>
 		<id>400</id>	
 		<image>product_img/product9.png</image>	
 		<shoeName>JAPAN-FOOTWEAR-Shoes</shoeName>
 		<price>8000</price>
-		<color>Cloud White / Core Black / Cloud Whit</color>
+		<color>Cloud Whitee / Core Black / Cloud White</color>
 	</shoe>		
 </shoes>

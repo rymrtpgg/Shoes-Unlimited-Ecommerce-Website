@@ -18,26 +18,20 @@ session_start();
 				$database->username = $username;
 				$database->password = $password;
 				$database->email 		= $email;
+				// $database->create_user();
 				
-				if($database->create_user()){
-					echo "<script>alert('Success to add this user')</script>";
-				}
-
+				echo $username . $email;
 			}
-	}
-
+		}
 	elseif($_POST['signInBtn']){
 
 		if($recaptcha->success_to_decode()) {
 
 				$username = $_POST['userName'];
 				$password = sha1($_POST['password']);
-
 				$sql = "SELECT * FROM users WHERE username = '$username' AND password ='$password'";
-
 				$result = mysqli_query($conection, $sql);
 				$row_count = mysqli_num_rows($result);
-
 
 				if($row_count > 0) {
 					$row = mysqli_fetch_assoc($result);
@@ -47,11 +41,8 @@ session_start();
 				}else {
 					echo  "<script>alert('Woops! Email or Password is Wrong.') window.location.href = '../index.php' </script>";
 				}
-
 		}else{
 	 	echo  "<script>alert('Woops! Email or Password is Wrong.') window.location.href = '../index.php' </script>";
 	 }
-	 }
-
-
+	}
 ?>

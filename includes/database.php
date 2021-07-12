@@ -70,7 +70,7 @@ class Database {
 			echo "</pre>";
 		}else{
 			echo "<script>alert('Success to connect')</script>";
-			header("Location: ../index.php");
+			// header("Location: ../index.php");
 		}
 	}
 
