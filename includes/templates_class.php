@@ -18,7 +18,7 @@ class Template {
       echo "<form class = 'form' method='POST' action='cartMan.php'>";
       echo "<div class='card'>";
       echo "<img name='image' src=' " . $image . "' alt='nike' width='100%' height='330'>";
-      echo "<p><h1 name='prodName' value ='React-Infinity-Run'> ". $name . $id . " </h1></p>";
+      echo "<p><h1 name='prodName' value ='React-Infinity-Run'> ". $name . " </h1></p>";
       echo "<p name='price' > " . $price_format . "</p>";
       echo "<p>Color: ". $color ."</p>";
       echo "<p><button type='submit' class='cartBtn' id='cartBtn' name='cartBtn'>Add to Cart</button></p>";
@@ -120,7 +120,7 @@ class Template {
       echo "<form class = 'form' method='POST' action='cartMan.php'>";
       echo "<div class='card'>";
       echo "<img name='image' src=' " . $image . "' alt='nike' width='100%' height='330'>";
-      echo "<p><h1 name='prodName' value ='React-Infinity-Run'> ". $name . $id . " </h1></p>";
+      echo "<p><h1 name='prodName' value ='React-Infinity-Run'> ". $name .  " </h1></p>";
       echo "<p name='price' > " . $price_format . "</p>";
       echo "<p>Color: ". $color ."</p>";
       echo "<p><button type='submit' class='cartBtn' id='cartBtn' name='move_to_cartBtn'>Move to Cart</button></p>";
