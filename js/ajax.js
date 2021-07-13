@@ -15,9 +15,7 @@ function showSuggestion(objXhr) {
 	var parent_shoes = objXhr.responseXML.getElementsByTagName('shoes')[0];
 	var all_child		 = parent_shoes.getElementsByTagName('shoeName');
 	var namesArry 	 = [];
-
-
-
+	
 	var searchTextBox = document.getElementById('searchText');
 	var searchText			= document.getElementById('searchText').value.toLowerCase();
 	var tracker = 0;
@@ -30,8 +28,6 @@ function showSuggestion(objXhr) {
 	while(display_suggestion.childNodes.length != 0) {
 		display_suggestion.removeChild(display_suggestion.firstChild);
 	}
-
-
 
 	var divpop;
 	for(var i=0; i<namesArry.length; i++) {
