@@ -13,14 +13,18 @@ session_start();
  
 				$username = $_POST['unameup'];
 				$email		= $_POST['emailup'];
-				$confirm_password = sha1($_POST['conf_passup']);
 				$password 				= sha1($_POST['passup']);
-				$database->username = $username;
-				$database->password = $password;
-				$database->email 		= $email;
-				// $database->create_user();
-				
-				echo $username . $email;
+				$confirm_password = sha1($_POST['conf_passup']);
+
+				if($password == $confirm_password) {
+
+					$sql = "INSERT INTO users(username, email, password) VALUES ('$username', '$email', '$password')";
+					$result = mysqli_query($conection, $sql);
+					echo "<script> alert('Successs to add') </script>";
+				}else {
+
+					echo "<script> alert('Error to add') </script>";
+				}
 			}
 		}
 	elseif($_POST['signInBtn']){

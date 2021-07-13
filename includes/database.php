@@ -51,12 +51,9 @@ class Database {
 		$username = $this->username;
 		$password = $this->password;
 		$email 		= $this->email;
+
 		$sql = "INSERT INTO users(username, email, password) VALUES ('$username', '$email', '$password')";
-		if($this->result($sql)) {
-			echo "<script>";
-			echo "alert('Success to add this user')";
-			echo "</script>";
-		}
+		$this->result($sql);
 
 	}
 
