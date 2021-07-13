@@ -75,17 +75,6 @@ class Shoes extends Template{
         header("Location: homepage.php");
       }
 
-
-    // if($file == "XML/cart.xml"){
-    //   header("Location: cart.php");
-    // }
-    // elseif($file == "XML/wishlist.xml"){
-    //   header("Location: wishlist.php");
-
-    // }else{
-    //   header("Location: homepage.php");
-    // }
-
     }
   }
 
@@ -121,15 +110,15 @@ class Shoes extends Template{
   
       if($this->file == "XML/cart.xml"){
         header("Location: cart.php");
-        // echo "cart remove success";
+        
       }
       elseif($this->file == "XML/wishlist.xml"){
         header("Location: wishlist.php");
-        // echo "wishlist remove success";
+      
 
 
       }else{
-        // header("Location: homepage.php");
+        
         echo "homepage remove success";
 
       }
@@ -183,41 +172,6 @@ class Shoes extends Template{
       $this->add_shoes_to_this($this->move_file);
       $this->remove_item_to_this($this->id);
 
-      // $parent_shoes->item(0)->removeChild($old_index_node);
-      // $test = $this->documents->save($this->file);
-
-    //   if($test) {
-    //     echo "yes";
-    //   }else {
-    //     echo "no";
-    //   }
-    // }
-
-      // $parent_shoes->item(0)->removeChild($old_node);
-      // $test = $this->documents->save($this->move_file);
-
-      //   if($test){
-      //     echo $old_id;
-      //     echo $counter;
-
-      //     echo "yes";
-      //   }else {
-      //     echo "no";
-      //   }
-
-
-    // echo "<pre>";
-    // print_r($old_node);
-    // echo "</pre>";
-
-    // echo $id   . "<br />";
-    // echo $img  . "<br />";
-    // echo $name . "<br />";
-    // echo $color. "<br />";
-    // echo $price_input. "<br />";
-
-      
-
     }
   }
 
@@ -225,9 +179,6 @@ class Shoes extends Template{
 
  }   
   
-  
-
-
 }
 $my_product = new Shoes();
 ?>

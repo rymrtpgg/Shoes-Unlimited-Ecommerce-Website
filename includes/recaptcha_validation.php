@@ -1,6 +1,5 @@
 <?php 
 
-
 class Recaptcha {
 
 	public function success_to_decode() {
@@ -17,9 +16,6 @@ class Recaptcha {
 			return true;
 		}
 	}
-
-
-
 }
 
 $recaptcha = new Recaptcha();

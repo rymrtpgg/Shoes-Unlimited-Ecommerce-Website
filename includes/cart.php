@@ -7,12 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shoes Unlimited | Shopping Cart</title>
-
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   <link rel="stylesheet" href="../style/cart.css">
   <script type="text/javascript" src="../js/homepage.js"></script>
-  
-
 </head>
 <body>
     

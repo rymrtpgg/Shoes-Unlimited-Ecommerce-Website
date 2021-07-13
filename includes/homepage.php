@@ -25,8 +25,6 @@
 
 
       <?php $my_product->display_all_shoes_from('XML/product.xml'); ?>
-      <?php //echo $_SESSION['username']; ?>
-      <!-- <button onclick='pop_up()'>Click Me</button> -->
 
     </div>
   </div>

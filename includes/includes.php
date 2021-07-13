@@ -5,5 +5,4 @@ include("config.php");
 include("functions.php");
 include("recaptcha_validation.php");
 
-
 ?>

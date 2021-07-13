@@ -9,7 +9,6 @@
   box-sizing: border-box;
 }
 
-
 /*17: 39;*/
 .card {
   border-radius: 20px 20px;
@@ -64,9 +63,7 @@
 }
 
 
-.contBx { 
-  /*background: whitesmoke;*/
-}
+
 
 a {
   text-decoration: none;
@@ -105,6 +102,10 @@ a:hover {
   left: 0;
 }
 
+.footer .fab {
+  margin: 5px;
+}
+
 .contenst {
   width: 100%;
   display: flex;
@@ -114,7 +115,6 @@ a:hover {
 
 .container-fluid {
   flex: 1;
-  /*border: 1px solid white;*/
 
 }
 .smallFooter {

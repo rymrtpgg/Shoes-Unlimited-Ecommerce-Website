@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <shoes>
   <shoe>
-    <id>200</id>
-    <image>product_img/product2.png</image>
-    <shoeName>Adidas-Grand-Court-Shoes</shoeName>
-    <price>4000</price>
+    <id>100</id>
+    <image>product_img/product1.png</image>
+    <shoeName>React-Infinity-Run-Shoes</shoeName>
+    <price>3000</price>
     <color>Cloud Whitee / Core Black / Cloud White</color>
   </shoe>
 </shoes>

@@ -42,6 +42,7 @@ session_start();
 					$_SESSION['username'] = $row['username'];
 					$_SESSION['id'] = $row['id'];
 					header("Location: homepage.php");
+					echo "<script>alert('welcome')</script>";
 				}else {
 					echo  "<script>alert('Woops! Email or Password is Wrong.') window.location.href = '../index.php' </script>";
 				}

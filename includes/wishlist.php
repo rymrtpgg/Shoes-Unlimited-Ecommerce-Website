@@ -13,10 +13,9 @@
   <script type="text/javascript" src="../js/homepage.js"></script> 
   
 </head>
-    
 <body>
-
 <?php include("navbar.php") ?> 
+
   <div class="jumbotron text-center jumbotron-image shadow" style="background-image: url(https://images.unsplash.com/photo-1552152974-19b9caf99137?fit=crop&w=1350&q=80">
     <h1 style="color:wheat;">SHOES UNLIMITED WISHLIST</h1>
     <p style="color:wheat;">Step By Step</p> 
@@ -29,10 +28,7 @@
     </div>
 
   <!-- Product End -->   
-
-
-<?php  ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>s
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>

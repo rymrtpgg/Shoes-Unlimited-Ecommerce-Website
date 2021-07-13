@@ -2,7 +2,6 @@
 
 class Template {
 
-
   public function homepage_template($child_shoes) {
 
     foreach($child_shoes as $each_shoes) {
