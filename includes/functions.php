@@ -71,15 +71,20 @@ class Shoes extends Template{
       $test = $this->documents->save($file);
 
 
-    if($file == "XML/cart.xml"){
-      header("Location: cart.php");
-    }
-    elseif($file == "XML/wishlist.xml"){
-      header("Location: wishlist.php");
+      if(isset($_POST['cartBtn']) || isset($_POST['wishBtn'])) {
+        header("Location: homepage.php");
+      }
 
-    }else{
-      header("Location: homepage.php");
-    }
+
+    // if($file == "XML/cart.xml"){
+    //   header("Location: cart.php");
+    // }
+    // elseif($file == "XML/wishlist.xml"){
+    //   header("Location: wishlist.php");
+
+    // }else{
+    //   header("Location: homepage.php");
+    // }
 
     }
   }

@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="../style/wishlist.css">
   <link rel="stylesheet" href="../style/homepage.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script type="text/javascript" src="../js/homepage.js"></script> 
+  
 </head>
     
 <body>

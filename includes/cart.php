@@ -10,6 +10,7 @@
 
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   <link rel="stylesheet" href="../style/cart.css">
+  <script type="text/javascript" src="../js/homepage.js"></script>
   
 
 </head>

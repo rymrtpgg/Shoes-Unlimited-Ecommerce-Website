@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../style/homepage.css">  
   <link rel="stylesheet" type="text/css" href="../style/home.css">  
+  <script type="text/javascript" src="../js/homepage.js"></script> 
 </head>
 <body>
 
@@ -24,12 +25,15 @@
 
 
       <?php $my_product->display_all_shoes_from('XML/product.xml'); ?>
+      <?php //echo $_SESSION['username']; ?>
+      <!-- <button onclick='pop_up()'>Click Me</button> -->
 
     </div>
   </div>
   <!----------------------- Main Container End  --------------------------->
 
-<?php include("footer.php") ?>  
+<?php include("footer.php") ?> 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>

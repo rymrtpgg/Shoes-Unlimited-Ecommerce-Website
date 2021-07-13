@@ -60,7 +60,7 @@
         <ul class="dropdown-menu">
           <li><a href="#"></a></li>
           <li><a href="developers/">The Developers</a></li>
-          <li><a href="#">Account Setting</a></li>
+          <li><a href="developers/help.php">Help</a></li>
           <li><a href="logout.php">Log Out</a></li>
         </ul>
     </ul>

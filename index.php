@@ -11,6 +11,7 @@
 	
 	<title> Login | Shoes Unlimited </title>
 	<link rel="stylesheet" type="text/css" href="Logi&Signup/index.css">
+	<script type="text/javascript" src="js/homepage.js"></script>
 	
 </head>
 <body>
@@ -27,7 +28,7 @@
 						<input type="password" name="password" id="password" placeholder="Password">
 						<div class="g-recaptcha" data-sitekey="6LfOaMwaAAAAAOVgL-vwP6WDUoDsDhpVd4cxOgfG"></div> <!--recaptcha-->
 						<input type="submit" id="signInBtn" name="signInBtn" value="Login">
-						<p class="signUp"> Don't have an account? <a href="#" onclick="toggle();">Sign Up!</a></p>
+						<p class="signUp"> Don't have an account? <a href="#" onclick="toggle(); onclick=login_success_popup();">Sign Up!</a></p>
 					</form>
 				</div>
 			</div>

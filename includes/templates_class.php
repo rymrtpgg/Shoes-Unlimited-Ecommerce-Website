@@ -21,8 +21,8 @@ class Template {
       echo "<p><h1 name='prodName' value ='React-Infinity-Run'> ". $name . " </h1></p>";
       echo "<p name='price' > " . $price_format . "</p>";
       echo "<p>Color: ". $color ."</p>";
-      echo "<p><button type='submit' class='cartBtn' id='cartBtn' name='cartBtn'>Add to Cart</button></p>";
-      echo "<p><button type='submit' class='wishBtn' id='wishBtn' name='wishBtn'>Add to WishList</button></p>";
+      echo "<p><button type='submit' class='cartBtn' id='cartBtn' name='cartBtn' onclick='pop_up()'>Add to Cart</button></p>";
+      echo "<p><button type='submit' class='wishBtn' id='wishBtn' name='wishBtn' onclick='wish_pop_up()'>Add to WishList</button></p>";
       echo "<input type='hidden' name='id' value='".$id."'>";
       echo "<input type='hidden' name='image' value='".$image."'>";
       echo "<input type='hidden' name='prodName' value='".$name."'>";
@@ -97,8 +97,8 @@ class Template {
       echo "<input type='hidden' name='id' value='".$id."'>";        
       echo "<div class='product_btns'>";
       
-      echo "<div class='cartRemove'><button class='cartRemove' id='cartRemove' name='cart_removeBtn'> REMOVE </button> </div>";   
-      echo "<div class='moveToWishList'><button class='moveToWishList' id='move_to_wishlist' name='move_to_wishlist'> MOVE TO WISHLIST </button> </div>";
+      echo "<div class='cartRemove'><button class='cartRemove' id='cartRemove' name='cart_removeBtn' onclick='remove_cart()'> REMOVE </button> </div>";   
+      echo "<div class='moveToWishList'><button class='moveToWishList' id='move_to_wishlist' name='move_to_wishlist' onclick='move_wish()'> MOVE TO WISHLIST </button> </div>";
       echo "</div></div>";
       echo "</form>";
     }
@@ -123,8 +123,8 @@ class Template {
       echo "<p><h1 name='prodName' value ='React-Infinity-Run'> ". $name .  " </h1></p>";
       echo "<p name='price' > " . $price_format . "</p>";
       echo "<p>Color: ". $color ."</p>";
-      echo "<p><button type='submit' class='cartBtn' id='cartBtn' name='move_to_cartBtn'>Move to Cart</button></p>";
-      echo "<p><button type='submit' class='removeBtn' id='removeBtn' name='wishlist_removeBtn'>Remove</button></p>";
+      echo "<p><button type='submit' class='cartBtn' id='cartBtn' name='move_to_cartBtn' onclick='pop_up()' >Move to Cart</button></p>";
+      echo "<p><button type='submit' class='removeBtn' id='removeBtn' name='wishlist_removeBtn' onclick='remove_to_wishlist()' >Remove</button></p>";
       echo "<input type='hidden' name='id' value='".$id."'>";
       echo "<input type='hidden' name='image' value='".$image."'>";
       echo "<input type='hidden' name='prodName' value='".$name."'>";
@@ -201,7 +201,7 @@ function priceDetails(){
   echo "<p>Total :</p>";
   echo "<p>₱" . number_format($over_all_total, 2) ."</p></div></div>";
   echo "<div class='checkout'>";
-  echo "<a href='#' role='button' class='checkout_btn'>Place Order</a></div></div>";    
+  echo "<a href='#' role='button' class='checkout_btn' onclick='place_pop()'>PLACE ORDER</a></div></div>";    
 }
 
 
