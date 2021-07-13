@@ -25,6 +25,8 @@ session_start();
 
 					echo "<script> alert('Error to add') </script>";
 				}
+			}else {
+				echo "<script>alert('need to verify your recaptcha'</script>";
 			}
 		}
 	elseif($_POST['signInBtn']){
@@ -44,10 +46,10 @@ session_start();
 					header("Location: homepage.php");
 					echo "<script>alert('welcome')</script>";
 				}else {
-					echo  "<script>alert('Woops! Email or Password is Wrong.') window.location.href = '../index.php' </script>";
+					echo  "<script>alert('Woops! Email or Password is Wrong.')</script>";
 				}
 		}else{
-	 	echo  "<script>alert('Woops! Email or Password is Wrong.') window.location.href = '../index.php' </script>";
+	 	echo  "<script>alert('Woops! Email or Password is Wrong.')</script>";
 	 }
 	}
 ?>
