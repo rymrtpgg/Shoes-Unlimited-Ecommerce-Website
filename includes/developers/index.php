@@ -23,7 +23,7 @@
 	  	</div>  	
 	  	<div class="content_box">
 	  		<img src="img/raymart.jpg">
-	  		<h4>Raymart Guioguio</h4>
+	  		<h4>Raymart</h4>
 	  	</div>
 	  	<div class="content_box">
 	  		<img src="img/er.jpg">
