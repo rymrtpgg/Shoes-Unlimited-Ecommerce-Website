@@ -22,10 +22,7 @@
 
   <div class="container contBx">
     <div class="col">
-
-
       <?php $my_product->display_all_shoes_from('XML/product.xml'); ?>
-
     </div>
   </div>
   <!----------------------- Main Container End  --------------------------->
